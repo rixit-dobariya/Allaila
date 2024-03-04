@@ -17,7 +17,7 @@
 		<h1>Sign In or Create an Account</h1>
 	</div>
 	<!-- /page_header -->
-			<div class="row justify-content-center">
+		<div class="row justify-content-center">
 				<%--Login part--%>
 			<div class="col-xl-6 col-lg-6 col-md-8">
 				<div class="box_account">

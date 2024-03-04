@@ -14,7 +14,10 @@ namespace Allaila
         protected void Page_Load(object sender, EventArgs e)
         {
             userOps = new UserOperations();
-            fillData();
+            if (!IsPostBack)
+            { 
+                fillData();
+            }
         }
         void fillData()
         {
@@ -29,15 +32,12 @@ namespace Allaila
         protected void Button1_Click(object sender, EventArgs e)
         {
             String userId = Session["userId"].ToString();
-            userOps.updateUser(userId, txtFirstName.Text, txtLastName.Text, txtEmail.Text, txtPhoneNo.Text);
-            clearForm();
-        }
-        void clearForm()
-        {
-            txtFirstName.Text = "";
-            txtLastName.Text = "";
-            txtEmail.Text = "";
-            txtPhoneNo.Text = "";
+            string firstName = txtFirstName.Text;
+            string lastName = txtLastName.Text;
+            string email = txtEmail.Text;
+            string phoneNo = txtPhoneNo.Text;
+            userOps.updateUser(userId, firstName, lastName, email, phoneNo);
+            fillData();
         }
     }
 }
