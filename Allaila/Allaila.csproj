@@ -1,0 +1,844 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3FF171EE-A257-4416-AB95-912B33040C48}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Allaila</RootNamespace>
+    <AssemblyName>Allaila</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44397</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\AddProduct.aspx" />
+    <Content Include="Admin\index.aspx" />
+    <Content Include="Admin\Products.aspx" />
+    <Content Include="App_Data\shoes_store_db.mdf" />
+    <Content Include="App_Data\shoes_store_db_log.ldf">
+      <DependentUpon>shoes_store_db.mdf</DependentUpon>
+    </Content>
+    <Content Include="css\about.css" />
+    <Content Include="css\account.css" />
+    <Content Include="css\ajax-loader.gif" />
+    <Content Include="css\blog.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\cart.css" />
+    <Content Include="css\checkout.css" />
+    <Content Include="css\contact.css" />
+    <Content Include="css\custom.css" />
+    <Content Include="css\error_track.css" />
+    <Content Include="css\faq.css" />
+    <Content Include="css\fonts\fontello.svg" />
+    <Content Include="css\fonts\fontello_and_header_icons.html" />
+    <Content Include="css\fonts\header_icons.svg" />
+    <Content Include="css\fonts\themify-class-reference.html" />
+    <Content Include="css\fonts\themify.svg" />
+    <Content Include="css\home_1.css" />
+    <Content Include="css\jquery.mmenu.all.css" />
+    <Content Include="css\leave_review.css" />
+    <Content Include="css\listing.css" />
+    <Content Include="css\product_page.css" />
+    <Content Include="css\style.css" />
+    <Content Include="Helpers\WebForm1.aspx" />
+    <Content Include="img\404.svg" />
+    <Content Include="img\about_1.svg" />
+    <Content Include="img\about_2.svg" />
+    <Content Include="img\about_3.svg" />
+    <Content Include="img\about_placeholder.jpg" />
+    <Content Include="img\apple-touch-icon-114x114-precomposed.png" />
+    <Content Include="img\apple-touch-icon-144x144-precomposed.png" />
+    <Content Include="img\apple-touch-icon-57x57-precomposed.png" />
+    <Content Include="img\apple-touch-icon-72x72-precomposed.png" />
+    <Content Include="img\arrow_about.png" />
+    <Content Include="img\arrow_left.svg" />
+    <Content Include="img\arrow_right.svg" />
+    <Content Include="img\avatar.jpg" />
+    <Content Include="img\avatar1.jpg" />
+    <Content Include="img\avatar2.jpg" />
+    <Content Include="img\avatar3.jpg" />
+    <Content Include="img\avatar4.jpg" />
+    <Content Include="img\avatar5.jpg" />
+    <Content Include="img\avatar6.jpg" />
+    <Content Include="img\avatar7.jpg" />
+    <Content Include="img\avatar8.jpg" />
+    <Content Include="img\banners_cat_placeholder.jpg" />
+    <Content Include="img\banner_1.jpg" />
+    <Content Include="img\banner_2.jpg" />
+    <Content Include="img\banner_3.jpg" />
+    <Content Include="img\banner_menu.jpg" />
+    <Content Include="img\banner_popup.png" />
+    <Content Include="img\bg_cat_shoes.jpg" />
+    <Content Include="img\blog-1.jpg" />
+    <Content Include="img\blog-2.jpg" />
+    <Content Include="img\blog-3.jpg" />
+    <Content Include="img\blog-4.jpg" />
+    <Content Include="img\blog-5.jpg" />
+    <Content Include="img\blog-6.jpg" />
+    <Content Include="img\blog-single.jpg" />
+    <Content Include="img\blog-thumb-1.jpg" />
+    <Content Include="img\blog-thumb-2.jpg" />
+    <Content Include="img\blog-thumb-3.jpg" />
+    <Content Include="img\blog-thumb-4.jpg" />
+    <Content Include="img\blog-thumb-placeholder.jpg" />
+    <Content Include="img\brands\logo_1.png" />
+    <Content Include="img\brands\logo_2.png" />
+    <Content Include="img\brands\logo_3.png" />
+    <Content Include="img\brands\logo_4.png" />
+    <Content Include="img\brands\logo_5.png" />
+    <Content Include="img\brands\logo_6.png" />
+    <Content Include="img\brands\placeholder_brands.png" />
+    <Content Include="img\camera.svg" />
+    <Content Include="img\cards_all.svg" />
+    <Content Include="img\countdown_bg.svg" />
+    <Content Include="img\credit-cards_amazon.svg" />
+    <Content Include="img\credit-cards_amex.svg" />
+    <Content Include="img\credit-cards_apple-pay.svg" />
+    <Content Include="img\credit-cards_bitcoin.svg" />
+    <Content Include="img\credit-cards_diners-club.svg" />
+    <Content Include="img\credit-cards_discover.svg" />
+    <Content Include="img\credit-cards_maestro.svg" />
+    <Content Include="img\credit-cards_mastercard.svg" />
+    <Content Include="img\credit-cards_paypal.svg" />
+    <Content Include="img\credit-cards_visa.svg" />
+    <Content Include="img\drag_icon.svg" />
+    <Content Include="img\facebook_icon.svg" />
+    <Content Include="img\favicon.ico" />
+    <Content Include="img\featured_home.jpg" />
+    <Content Include="img\iconfinder_user_male4_172628 %281%29.svg" />
+    <Content Include="img\icon_access.svg" />
+    <Content Include="img\icon_cart.svg" />
+    <Content Include="img\icon_grid.svg" />
+    <Content Include="img\icon_like.svg" />
+    <Content Include="img\icon_search.svg" />
+    <Content Include="img\img_cat_home_1.jpg" />
+    <Content Include="img\img_cat_home_1_placeholder.png" />
+    <Content Include="img\img_cat_home_2.jpg" />
+    <Content Include="img\img_cat_home_2_placeholder.png" />
+    <Content Include="img\img_cat_home_3.jpg" />
+    <Content Include="img\img_cat_home_4.jpg" />
+    <Content Include="img\img_cat_home_4_placeholder.png" />
+    <Content Include="img\instagram_icon.svg" />
+    <Content Include="img\logo.svg" />
+    <Content Include="img\logo_black.svg" />
+    <Content Include="img\menu-demo-1.jpg" />
+    <Content Include="img\menu-demo-2.jpg" />
+    <Content Include="img\menu-demo-3.jpg" />
+    <Content Include="img\newsletter_img.jpg" />
+    <Content Include="img\new_user.svg" />
+    <Content Include="img\paypal.svg" />
+    <Content Include="img\placeholder.png" />
+    <Content Include="img\products\product_placeholder_detail.jpg" />
+    <Content Include="img\products\product_placeholder_detail_2.jpg" />
+    <Content Include="img\products\product_placeholder_square_medium.jpg" />
+    <Content Include="img\products\product_placeholder_square_small.jpg" />
+    <Content Include="img\products\shoes\1.jpg" />
+    <Content Include="img\products\shoes\10.jpg" />
+    <Content Include="img\products\shoes\1_b.jpg" />
+    <Content Include="img\products\shoes\2.jpg" />
+    <Content Include="img\products\shoes\2_b.jpg" />
+    <Content Include="img\products\shoes\3.jpg" />
+    <Content Include="img\products\shoes\3_b.jpg" />
+    <Content Include="img\products\shoes\4.jpg" />
+    <Content Include="img\products\shoes\4_b.jpg" />
+    <Content Include="img\products\shoes\5.jpg" />
+    <Content Include="img\products\shoes\5_b.jpg" />
+    <Content Include="img\products\shoes\6.jpg" />
+    <Content Include="img\products\shoes\6_b.jpg" />
+    <Content Include="img\products\shoes\7.jpg" />
+    <Content Include="img\products\shoes\7_b.jpg" />
+    <Content Include="img\products\shoes\8.jpg" />
+    <Content Include="img\products\shoes\8_b.jpg" />
+    <Content Include="img\products\shoes\9.jpg" />
+    <Content Include="img\products\shoes\large\1.jpg" />
+    <Content Include="img\products\shoes\large\2.jpg" />
+    <Content Include="img\products\shoes\large\3.jpg" />
+    <Content Include="img\products\shoes\large\4.jpg" />
+    <Content Include="img\products\shoes\large\5.jpg" />
+    <Content Include="img\products\shoes\product_detail_1.jpg" />
+    <Content Include="img\products\shoes\product_detail_2.jpg" />
+    <Content Include="img\products\shoes\thumb\1.jpg" />
+    <Content Include="img\products\shoes\thumb\2.jpg" />
+    <Content Include="img\search.svg" />
+    <Content Include="img\slides\slide_home_1.jpg" />
+    <Content Include="img\slides\slide_home_1_vertical.jpg" />
+    <Content Include="img\slides\slide_home_2.jpg" />
+    <Content Include="img\slides\slide_home_2_vertical.jpg" />
+    <Content Include="img\slides\slide_home_3.jpg" />
+    <Content Include="img\slides\slide_home_3_vertical.jpg" />
+    <Content Include="img\slides\slide_home_4_vertical.jpg" />
+    <Content Include="img\staff\1_carousel.jpg" />
+    <Content Include="img\staff\2_carousel.jpg" />
+    <Content Include="img\staff\3_carousel.jpg" />
+    <Content Include="img\staff\4_carousel.jpg" />
+    <Content Include="img\staff\5_carousel.jpg" />
+    <Content Include="img\stars.svg" />
+    <Content Include="img\testimonial_1.jpg" />
+    <Content Include="img\testimonial_2.jpg" />
+    <Content Include="img\testimonial_3.jpg" />
+    <Content Include="img\top_about.jpg" />
+    <Content Include="img\top_banner_placeholder.jpg" />
+    <Content Include="img\track_order.svg" />
+    <Content Include="img\twitter_icon.svg" />
+    <Content Include="img\user.svg" />
+    <Content Include="img\video_fix.png" />
+    <Content Include="img\youtube_icon.svg" />
+    <Content Include="index.aspx" />
+    <Content Include="js\bootstrap.bundle.js" />
+    <Content Include="js\bootstrap.bundle.min.js" />
+    <Content Include="js\carousel-home-2.js" />
+    <Content Include="js\carousel-home.js" />
+    <Content Include="js\carousel-home.min.js" />
+    <Content Include="js\carousel_with_thumbs.js" />
+    <Content Include="js\common_scripts.js" />
+    <Content Include="js\common_scripts.min.js" />
+    <Content Include="js\footer-reveal.js" />
+    <Content Include="js\footer-reveal.min.js" />
+    <Content Include="js\isotope.min.js" />
+    <Content Include="js\jquery-3.6.3.min.js" />
+    <Content Include="js\jquery.cookiebar.js" />
+    <Content Include="js\jquery.magnific-popup.js" />
+    <Content Include="js\jquery.magnific-popup.min.js" />
+    <Content Include="js\jquery.mmenu.all.js" />
+    <Content Include="js\jquery.nice-select.js" />
+    <Content Include="js\jquery.nice-select.min.js" />
+    <Content Include="js\lazyload.js" />
+    <Content Include="js\lazyload.min.js" />
+    <Content Include="js\main.js" />
+    <Content Include="js\modernizr.js" />
+    <Content Include="js\owl.carousel.js" />
+    <Content Include="js\owl.carousel.min.js" />
+    <Content Include="js\ResizeSensor.js" />
+    <Content Include="js\ResizeSensor.min.js" />
+    <Content Include="js\specific_listing.js" />
+    <Content Include="js\sticky_sidebar.min.js" />
+    <Content Include="js\theia-sticky-sidebar.js" />
+    <Content Include="js\theia-sticky-sidebar.min.js" />
+    <Content Include="js\video_header.js" />
+    <Content Include="js\video_header.min.js" />
+    <Content Include="js\wow.js" />
+    <Content Include="js\wow.min.js" />
+    <Content Include="MyProfile.aspx" />
+    <Content Include="RegisterSignIn.aspx" />
+    <Content Include="sass\compass_app_log.txt" />
+    <Content Include="Template\html\404.html" />
+    <Content Include="Template\html\about-2.html" />
+    <Content Include="Template\html\about.html" />
+    <Content Include="Template\html\account.html" />
+    <Content Include="Template\html\blog-post.html" />
+    <Content Include="Template\html\blog.html" />
+    <Content Include="Template\html\cart.html" />
+    <Content Include="Template\html\checkout.html" />
+    <Content Include="Template\html\confirm.html" />
+    <Content Include="Template\html\contacts.html" />
+    <Content Include="Template\html\css\about.css" />
+    <Content Include="Template\html\css\account.css" />
+    <Content Include="Template\html\css\ajax-loader.gif" />
+    <Content Include="Template\html\css\blog.css" />
+    <Content Include="Template\html\css\bootstrap.css" />
+    <Content Include="Template\html\css\bootstrap.min.css" />
+    <Content Include="Template\html\css\cart.css" />
+    <Content Include="Template\html\css\checkout.css" />
+    <Content Include="Template\html\css\contact.css" />
+    <Content Include="Template\html\css\custom.css" />
+    <Content Include="Template\html\css\error_track.css" />
+    <Content Include="Template\html\css\faq.css" />
+    <Content Include="Template\html\css\fonts\fontello.svg" />
+    <Content Include="Template\html\css\fonts\fontello_and_header_icons.html" />
+    <Content Include="Template\html\css\fonts\header_icons.svg" />
+    <Content Include="Template\html\css\fonts\themify-class-reference.html" />
+    <Content Include="Template\html\css\fonts\themify.svg" />
+    <Content Include="Template\html\css\home_1.css" />
+    <Content Include="Template\html\css\jquery.mmenu.all.css" />
+    <Content Include="Template\html\css\leave_review.css" />
+    <Content Include="Template\html\css\listing.css" />
+    <Content Include="Template\html\css\product_page.css" />
+    <Content Include="Template\html\css\style.css" />
+    <Content Include="Template\html\header-2.html" />
+    <Content Include="Template\html\header-3.html" />
+    <Content Include="Template\html\header-4.html" />
+    <Content Include="Template\html\header-5.html" />
+    <Content Include="Template\html\help-2.html" />
+    <Content Include="Template\html\help.html" />
+    <Content Include="Template\html\img\404.svg" />
+    <Content Include="Template\html\img\about_1.svg" />
+    <Content Include="Template\html\img\about_2.svg" />
+    <Content Include="Template\html\img\about_3.svg" />
+    <Content Include="Template\html\img\about_placeholder.jpg" />
+    <Content Include="Template\html\img\apple-touch-icon-114x114-precomposed.png" />
+    <Content Include="Template\html\img\apple-touch-icon-144x144-precomposed.png" />
+    <Content Include="Template\html\img\apple-touch-icon-57x57-precomposed.png" />
+    <Content Include="Template\html\img\apple-touch-icon-72x72-precomposed.png" />
+    <Content Include="Template\html\img\arrow_about.png" />
+    <Content Include="Template\html\img\arrow_left.svg" />
+    <Content Include="Template\html\img\arrow_right.svg" />
+    <Content Include="Template\html\img\avatar.jpg" />
+    <Content Include="Template\html\img\avatar1.jpg" />
+    <Content Include="Template\html\img\avatar2.jpg" />
+    <Content Include="Template\html\img\avatar3.jpg" />
+    <Content Include="Template\html\img\avatar4.jpg" />
+    <Content Include="Template\html\img\avatar5.jpg" />
+    <Content Include="Template\html\img\avatar6.jpg" />
+    <Content Include="Template\html\img\avatar7.jpg" />
+    <Content Include="Template\html\img\avatar8.jpg" />
+    <Content Include="Template\html\img\banners_cat_placeholder.jpg" />
+    <Content Include="Template\html\img\banner_1.jpg" />
+    <Content Include="Template\html\img\banner_2.jpg" />
+    <Content Include="Template\html\img\banner_3.jpg" />
+    <Content Include="Template\html\img\banner_menu.jpg" />
+    <Content Include="Template\html\img\banner_popup.png" />
+    <Content Include="Template\html\img\bg_cat_shoes.jpg" />
+    <Content Include="Template\html\img\blog-1.jpg" />
+    <Content Include="Template\html\img\blog-2.jpg" />
+    <Content Include="Template\html\img\blog-3.jpg" />
+    <Content Include="Template\html\img\blog-4.jpg" />
+    <Content Include="Template\html\img\blog-5.jpg" />
+    <Content Include="Template\html\img\blog-6.jpg" />
+    <Content Include="Template\html\img\blog-single.jpg" />
+    <Content Include="Template\html\img\blog-thumb-1.jpg" />
+    <Content Include="Template\html\img\blog-thumb-2.jpg" />
+    <Content Include="Template\html\img\blog-thumb-3.jpg" />
+    <Content Include="Template\html\img\blog-thumb-4.jpg" />
+    <Content Include="Template\html\img\blog-thumb-placeholder.jpg" />
+    <Content Include="Template\html\img\brands\logo_1.png" />
+    <Content Include="Template\html\img\brands\logo_2.png" />
+    <Content Include="Template\html\img\brands\logo_3.png" />
+    <Content Include="Template\html\img\brands\logo_4.png" />
+    <Content Include="Template\html\img\brands\logo_5.png" />
+    <Content Include="Template\html\img\brands\logo_6.png" />
+    <Content Include="Template\html\img\brands\placeholder_brands.png" />
+    <Content Include="Template\html\img\camera.svg" />
+    <Content Include="Template\html\img\cards_all.svg" />
+    <Content Include="Template\html\img\countdown_bg.svg" />
+    <Content Include="Template\html\img\credit-cards_amazon.svg" />
+    <Content Include="Template\html\img\credit-cards_amex.svg" />
+    <Content Include="Template\html\img\credit-cards_apple-pay.svg" />
+    <Content Include="Template\html\img\credit-cards_bitcoin.svg" />
+    <Content Include="Template\html\img\credit-cards_diners-club.svg" />
+    <Content Include="Template\html\img\credit-cards_discover.svg" />
+    <Content Include="Template\html\img\credit-cards_maestro.svg" />
+    <Content Include="Template\html\img\credit-cards_mastercard.svg" />
+    <Content Include="Template\html\img\credit-cards_paypal.svg" />
+    <Content Include="Template\html\img\credit-cards_visa.svg" />
+    <Content Include="Template\html\img\drag_icon.svg" />
+    <Content Include="Template\html\img\facebook_icon.svg" />
+    <Content Include="Template\html\img\favicon.ico" />
+    <Content Include="Template\html\img\featured_home.jpg" />
+    <Content Include="Template\html\img\iconfinder_user_male4_172628 %281%29.svg" />
+    <Content Include="Template\html\img\icon_access.svg" />
+    <Content Include="Template\html\img\icon_cart.svg" />
+    <Content Include="Template\html\img\icon_grid.svg" />
+    <Content Include="Template\html\img\icon_like.svg" />
+    <Content Include="Template\html\img\icon_search.svg" />
+    <Content Include="Template\html\img\img_cat_home_1.jpg" />
+    <Content Include="Template\html\img\img_cat_home_1_placeholder.png" />
+    <Content Include="Template\html\img\img_cat_home_2.jpg" />
+    <Content Include="Template\html\img\img_cat_home_2_placeholder.png" />
+    <Content Include="Template\html\img\img_cat_home_3.jpg" />
+    <Content Include="Template\html\img\img_cat_home_4.jpg" />
+    <Content Include="Template\html\img\img_cat_home_4_placeholder.png" />
+    <Content Include="Template\html\img\instagram_icon.svg" />
+    <Content Include="Template\html\img\logo.svg" />
+    <Content Include="Template\html\img\logo_black.svg" />
+    <Content Include="Template\html\img\menu-demo-1.jpg" />
+    <Content Include="Template\html\img\menu-demo-2.jpg" />
+    <Content Include="Template\html\img\menu-demo-3.jpg" />
+    <Content Include="Template\html\img\newsletter_img.jpg" />
+    <Content Include="Template\html\img\new_user.svg" />
+    <Content Include="Template\html\img\paypal.svg" />
+    <Content Include="Template\html\img\placeholder.png" />
+    <Content Include="Template\html\img\products\product_placeholder_detail.jpg" />
+    <Content Include="Template\html\img\products\product_placeholder_detail_2.jpg" />
+    <Content Include="Template\html\img\products\product_placeholder_square_medium.jpg" />
+    <Content Include="Template\html\img\products\product_placeholder_square_small.jpg" />
+    <Content Include="Template\html\img\products\shoes\1.jpg" />
+    <Content Include="Template\html\img\products\shoes\10.jpg" />
+    <Content Include="Template\html\img\products\shoes\1_b.jpg" />
+    <Content Include="Template\html\img\products\shoes\2.jpg" />
+    <Content Include="Template\html\img\products\shoes\2_b.jpg" />
+    <Content Include="Template\html\img\products\shoes\3.jpg" />
+    <Content Include="Template\html\img\products\shoes\3_b.jpg" />
+    <Content Include="Template\html\img\products\shoes\4.jpg" />
+    <Content Include="Template\html\img\products\shoes\4_b.jpg" />
+    <Content Include="Template\html\img\products\shoes\5.jpg" />
+    <Content Include="Template\html\img\products\shoes\5_b.jpg" />
+    <Content Include="Template\html\img\products\shoes\6.jpg" />
+    <Content Include="Template\html\img\products\shoes\6_b.jpg" />
+    <Content Include="Template\html\img\products\shoes\7.jpg" />
+    <Content Include="Template\html\img\products\shoes\7_b.jpg" />
+    <Content Include="Template\html\img\products\shoes\8.jpg" />
+    <Content Include="Template\html\img\products\shoes\8_b.jpg" />
+    <Content Include="Template\html\img\products\shoes\9.jpg" />
+    <Content Include="Template\html\img\products\shoes\large\1.jpg" />
+    <Content Include="Template\html\img\products\shoes\large\2.jpg" />
+    <Content Include="Template\html\img\products\shoes\large\3.jpg" />
+    <Content Include="Template\html\img\products\shoes\large\4.jpg" />
+    <Content Include="Template\html\img\products\shoes\large\5.jpg" />
+    <Content Include="Template\html\img\products\shoes\product_detail_1.jpg" />
+    <Content Include="Template\html\img\products\shoes\product_detail_2.jpg" />
+    <Content Include="Template\html\img\products\shoes\thumb\1.jpg" />
+    <Content Include="Template\html\img\products\shoes\thumb\2.jpg" />
+    <Content Include="Template\html\img\search.svg" />
+    <Content Include="Template\html\img\slides\slide_home_1.jpg" />
+    <Content Include="Template\html\img\slides\slide_home_1_vertical.jpg" />
+    <Content Include="Template\html\img\slides\slide_home_2.jpg" />
+    <Content Include="Template\html\img\slides\slide_home_2_vertical.jpg" />
+    <Content Include="Template\html\img\slides\slide_home_3.jpg" />
+    <Content Include="Template\html\img\slides\slide_home_3_vertical.jpg" />
+    <Content Include="Template\html\img\slides\slide_home_4_vertical.jpg" />
+    <Content Include="Template\html\img\staff\1_carousel.jpg" />
+    <Content Include="Template\html\img\staff\2_carousel.jpg" />
+    <Content Include="Template\html\img\staff\3_carousel.jpg" />
+    <Content Include="Template\html\img\staff\4_carousel.jpg" />
+    <Content Include="Template\html\img\staff\5_carousel.jpg" />
+    <Content Include="Template\html\img\stars.svg" />
+    <Content Include="Template\html\img\testimonial_1.jpg" />
+    <Content Include="Template\html\img\testimonial_2.jpg" />
+    <Content Include="Template\html\img\testimonial_3.jpg" />
+    <Content Include="Template\html\img\top_about.jpg" />
+    <Content Include="Template\html\img\top_banner_placeholder.jpg" />
+    <Content Include="Template\html\img\track_order.svg" />
+    <Content Include="Template\html\img\twitter_icon.svg" />
+    <Content Include="Template\html\img\user.svg" />
+    <Content Include="Template\html\img\video_fix.png" />
+    <Content Include="Template\html\img\youtube_icon.svg" />
+    <Content Include="Template\html\index-2.html" />
+    <Content Include="Template\html\index-3.html" />
+    <Content Include="Template\html\index-4.html" />
+    <Content Include="Template\html\index.html" />
+    <Content Include="Template\html\js\bootstrap.bundle.js" />
+    <Content Include="Template\html\js\bootstrap.bundle.min.js" />
+    <Content Include="Template\html\js\carousel-home-2.js" />
+    <Content Include="Template\html\js\carousel-home.js" />
+    <Content Include="Template\html\js\carousel-home.min.js" />
+    <Content Include="Template\html\js\carousel_with_thumbs.js" />
+    <Content Include="Template\html\js\common_scripts.js" />
+    <Content Include="Template\html\js\common_scripts.min.js" />
+    <Content Include="Template\html\js\footer-reveal.js" />
+    <Content Include="Template\html\js\footer-reveal.min.js" />
+    <Content Include="Template\html\js\isotope.min.js" />
+    <Content Include="Template\html\js\jquery-3.6.3.min.js" />
+    <Content Include="Template\html\js\jquery.cookiebar.js" />
+    <Content Include="Template\html\js\jquery.magnific-popup.js" />
+    <Content Include="Template\html\js\jquery.magnific-popup.min.js" />
+    <Content Include="Template\html\js\jquery.mmenu.all.js" />
+    <Content Include="Template\html\js\jquery.nice-select.js" />
+    <Content Include="Template\html\js\jquery.nice-select.min.js" />
+    <Content Include="Template\html\js\lazyload.js" />
+    <Content Include="Template\html\js\lazyload.min.js" />
+    <Content Include="Template\html\js\main.js" />
+    <Content Include="Template\html\js\modernizr.js" />
+    <Content Include="Template\html\js\owl.carousel.js" />
+    <Content Include="Template\html\js\owl.carousel.min.js" />
+    <Content Include="Template\html\js\ResizeSensor.js" />
+    <Content Include="Template\html\js\ResizeSensor.min.js" />
+    <Content Include="Template\html\js\specific_listing.js" />
+    <Content Include="Template\html\js\sticky_sidebar.min.js" />
+    <Content Include="Template\html\js\theia-sticky-sidebar.js" />
+    <Content Include="Template\html\js\theia-sticky-sidebar.min.js" />
+    <Content Include="Template\html\js\video_header.js" />
+    <Content Include="Template\html\js\video_header.min.js" />
+    <Content Include="Template\html\js\wow.js" />
+    <Content Include="Template\html\js\wow.min.js" />
+    <Content Include="Template\html\leave-review.html" />
+    <Content Include="Template\html\listing-grid-1-full.html" />
+    <Content Include="Template\html\listing-grid-2-full.html" />
+    <Content Include="Template\html\listing-grid-3.html" />
+    <Content Include="Template\html\listing-grid-4-sidebar-left.html" />
+    <Content Include="Template\html\listing-grid-5-sidebar-right.html" />
+    <Content Include="Template\html\listing-grid-6-sidebar-left.html" />
+    <Content Include="Template\html\listing-grid-7-sidebar-right.html" />
+    <Content Include="Template\html\listing-row-1-sidebar-left.html" />
+    <Content Include="Template\html\listing-row-2-sidebar-right.html" />
+    <Content Include="Template\html\listing-row-3-sidebar-left.html" />
+    <Content Include="Template\html\listing-row-4-sidebar-extended.html" />
+    <Content Include="Template\html\menu-cat-3-levels.html" />
+    <Content Include="Template\html\menu-cat-long.html" />
+    <Content Include="Template\html\modal-advertise.html" />
+    <Content Include="Template\html\modal-newsletter.html" />
+    <Content Include="Template\html\product-detail-1.html" />
+    <Content Include="Template\html\product-detail-2.html" />
+    <Content Include="Template\html\product-detail-3.html" />
+    <Content Include="Template\html\sass\compass_app_log.txt" />
+    <Content Include="Template\html\sign-in-modal.html" />
+    <Content Include="Template\html\track-order.html" />
+    <Content Include="Template\html\video\intro.ogv" />
+    <Content Include="video\intro.ogv" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\AddProduct.aspx.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddProduct.aspx.designer.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Products.aspx.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Products.aspx.designer.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\RegisterLogin.cs" />
+    <Compile Include="Helpers\User.cs" />
+    <Compile Include="Helpers\UserOperations.cs" />
+    <Compile Include="Helpers\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Helpers\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyProfile.aspx.cs">
+      <DependentUpon>MyProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyProfile.aspx.designer.cs">
+      <DependentUpon>MyProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterSignIn.aspx.cs">
+      <DependentUpon>RegisterSignIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegisterSignIn.aspx.designer.cs">
+      <DependentUpon>RegisterSignIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\Site1.Master" />
+    <Content Include="css\fonts\fontello.eot" />
+    <Content Include="css\fonts\fontello.ttf" />
+    <Content Include="css\fonts\fontello.woff" />
+    <Content Include="css\fonts\fontello.woff2" />
+    <Content Include="css\fonts\header_icons.eot" />
+    <Content Include="css\fonts\header_icons.ttf" />
+    <Content Include="css\fonts\header_icons.woff" />
+    <Content Include="css\fonts\themify.eot" />
+    <Content Include="css\fonts\themify.ttf" />
+    <Content Include="css\fonts\themify.woff" />
+    <Content Include="Admin\Admin.sitemap" />
+    <None Include="packages.config" />
+    <Content Include="Template\html\css\fonts\fontello.eot" />
+    <Content Include="Template\html\css\fonts\fontello.ttf" />
+    <Content Include="Template\html\css\fonts\fontello.woff" />
+    <Content Include="Template\html\css\fonts\fontello.woff2" />
+    <Content Include="Template\html\css\fonts\header_icons.eot" />
+    <Content Include="Template\html\css\fonts\header_icons.ttf" />
+    <Content Include="Template\html\css\fonts\header_icons.woff" />
+    <Content Include="Template\html\css\fonts\themify.eot" />
+    <Content Include="Template\html\css\fonts\themify.ttf" />
+    <Content Include="Template\html\css\fonts\themify.woff" />
+    <Content Include="Template\html\sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\about.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\account.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\blog.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\cart.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\checkout.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\contact.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\error_track.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\faq.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\home_1.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\leave_review.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\listing.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\product_page.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\style.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\_mixin.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\_variables.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\about.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\account.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\blog.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\cart.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\checkout.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\color-aqua.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\color-beige.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\color-blue.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\color-gray.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\color-green-2.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\color-green.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\color-navy.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\color-orange.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\color-peach.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\color-purple.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\color-red.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\color-violet.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\contact.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\error_track.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\faq.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\home_1.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\leave_review.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\listing.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\product_page.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\style.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\_mixin.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\_variables.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\about.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\account.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\blog.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\cart.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\checkout.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\contact.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\error_track.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\faq.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\home_1.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\leave_review.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\listing.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\product_page.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\style.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\_mixin.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\_variables.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\about.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\account.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\blog.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\cart.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\checkout.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\contact.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\error_track.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\faq.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\home_1.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\leave_review.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\listing.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\product_page.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\style.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\_mixin.scssc" />
+    <Content Include="Template\html\sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\_variables.scssc" />
+    <Content Include="Template\html\sass\about.scss" />
+    <Content Include="Template\html\sass\account.scss" />
+    <Content Include="Template\html\sass\blog.scss" />
+    <Content Include="Template\html\sass\cart.scss" />
+    <Content Include="Template\html\sass\checkout.scss" />
+    <Content Include="Template\html\sass\config.rb" />
+    <Content Include="Template\html\sass\contact.scss" />
+    <Content Include="Template\html\sass\error_track.scss" />
+    <Content Include="Template\html\sass\faq.scss" />
+    <Content Include="Template\html\sass\home_1.scss" />
+    <Content Include="Template\html\sass\leave_review.scss" />
+    <Content Include="Template\html\sass\listing.scss" />
+    <Content Include="Template\html\sass\product_page.scss" />
+    <Content Include="Template\html\sass\style.scss" />
+    <Content Include="Template\html\sass\_mixin.scss" />
+    <Content Include="Template\html\sass\_variables.scss" />
+    <Content Include="Template\html\video\intro.mp4" />
+    <Content Include="sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\_mixin.scssc" />
+    <Content Include="sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\_variables.scssc" />
+    <Content Include="sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\about.scssc" />
+    <Content Include="sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\account.scssc" />
+    <Content Include="sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\blog.scssc" />
+    <Content Include="sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\cart.scssc" />
+    <Content Include="sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\checkout.scssc" />
+    <Content Include="sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\contact.scssc" />
+    <Content Include="sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\error_track.scssc" />
+    <Content Include="sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\faq.scssc" />
+    <Content Include="sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\home_1.scssc" />
+    <Content Include="sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\leave_review.scssc" />
+    <Content Include="sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\listing.scssc" />
+    <Content Include="sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\product_page.scssc" />
+    <Content Include="sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\style.scssc" />
+    <Content Include="sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\_mixin.scssc" />
+    <Content Include="sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\_variables.scssc" />
+    <Content Include="sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\about.scssc" />
+    <Content Include="sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\account.scssc" />
+    <Content Include="sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\blog.scssc" />
+    <Content Include="sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\cart.scssc" />
+    <Content Include="sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\checkout.scssc" />
+    <Content Include="sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\color-aqua.scssc" />
+    <Content Include="sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\color-beige.scssc" />
+    <Content Include="sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\color-blue.scssc" />
+    <Content Include="sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\color-gray.scssc" />
+    <Content Include="sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\color-green-2.scssc" />
+    <Content Include="sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\color-green.scssc" />
+    <Content Include="sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\color-navy.scssc" />
+    <Content Include="sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\color-orange.scssc" />
+    <Content Include="sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\color-peach.scssc" />
+    <Content Include="sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\color-purple.scssc" />
+    <Content Include="sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\color-red.scssc" />
+    <Content Include="sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\color-violet.scssc" />
+    <Content Include="sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\contact.scssc" />
+    <Content Include="sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\error_track.scssc" />
+    <Content Include="sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\faq.scssc" />
+    <Content Include="sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\home_1.scssc" />
+    <Content Include="sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\leave_review.scssc" />
+    <Content Include="sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\listing.scssc" />
+    <Content Include="sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\product_page.scssc" />
+    <Content Include="sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\style.scssc" />
+    <Content Include="sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\_mixin.scssc" />
+    <Content Include="sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\_variables.scssc" />
+    <Content Include="sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\about.scssc" />
+    <Content Include="sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\account.scssc" />
+    <Content Include="sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\blog.scssc" />
+    <Content Include="sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\cart.scssc" />
+    <Content Include="sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\checkout.scssc" />
+    <Content Include="sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\contact.scssc" />
+    <Content Include="sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\error_track.scssc" />
+    <Content Include="sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\faq.scssc" />
+    <Content Include="sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\home_1.scssc" />
+    <Content Include="sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\leave_review.scssc" />
+    <Content Include="sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\listing.scssc" />
+    <Content Include="sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\product_page.scssc" />
+    <Content Include="sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\style.scssc" />
+    <Content Include="sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\_mixin.scssc" />
+    <Content Include="sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\_variables.scssc" />
+    <Content Include="sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\about.scssc" />
+    <Content Include="sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\account.scssc" />
+    <Content Include="sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\blog.scssc" />
+    <Content Include="sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\cart.scssc" />
+    <Content Include="sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\checkout.scssc" />
+    <Content Include="sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\contact.scssc" />
+    <Content Include="sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\error_track.scssc" />
+    <Content Include="sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\faq.scssc" />
+    <Content Include="sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\home_1.scssc" />
+    <Content Include="sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\leave_review.scssc" />
+    <Content Include="sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\listing.scssc" />
+    <Content Include="sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\product_page.scssc" />
+    <Content Include="sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\style.scssc" />
+    <Content Include="sass\_mixin.scss" />
+    <Content Include="sass\_variables.scss" />
+    <Content Include="sass\about.scss" />
+    <Content Include="sass\account.scss" />
+    <Content Include="sass\blog.scss" />
+    <Content Include="sass\cart.scss" />
+    <Content Include="sass\checkout.scss" />
+    <Content Include="sass\config.rb" />
+    <Content Include="sass\contact.scss" />
+    <Content Include="sass\error_track.scss" />
+    <Content Include="sass\faq.scss" />
+    <Content Include="sass\home_1.scss" />
+    <Content Include="sass\leave_review.scss" />
+    <Content Include="sass\listing.scss" />
+    <Content Include="sass\product_page.scss" />
+    <Content Include="sass\style.scss" />
+    <Content Include="video\intro.mp4" />
+    <Content Include="Site1.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60752</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44397/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
