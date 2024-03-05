@@ -15,7 +15,14 @@ namespace Allaila.Helpers
         {
             con = ConnectionHelper.getCon();
         }
-
+        
+        public DataSet getProductDataSet()
+        {
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter("select Shoe_Id, Name from Shoes_Details_tbl", con);
+            da.Fill(ds);
+            return ds;
+        }
         
     }
 }
