@@ -10,10 +10,10 @@ namespace Allaila
 {
     public partial class RegisterSignIn : System.Web.UI.Page
     {
-        RegisterLogin obj;
+        RegisterLoginOperations obj;
         protected void Page_Load(object sender, EventArgs e)
         {
-            obj = new RegisterLogin();
+            obj = new RegisterLoginOperations();
             lblLoginResult.Visible = false;
             lblRegisterError.Visible = false;
             lblRegisterResponse.Visible = false;
@@ -56,23 +56,23 @@ namespace Allaila
             string email = txtLoginEmail.Text;
             string password = txtLoginPassword.Text;
 
-            int userId = obj.getUserId(email, password);
-            if (userId == -1)
+            User user = obj.getUser(email, password);
+            if (user.userId == "-1")
             {
                 lblLoginResult.Text = "Invalid email or password";
                 lblLoginResult.Visible = true;
             }
             else
             {
-                Session["userId"] = userId;
-                int userRoleId = obj.getUserRoleId(email);
-                if(userRoleId == 0)
+                Session["userId"] = user.userId;
+                string userRoleId = user.userRoleId;
+                if (userRoleId == "0")
                 {
-                    Response.Redirect("index.aspx?userId="+userId);
+                    Response.Redirect("index.aspx");
                 }
                 else
                 {
-                    Response.Redirect("Admin/index.aspx?userId=" + userId);
+                    Response.Redirect("Admin/index.aspx");
                 }
             }
         }

@@ -15,7 +15,6 @@
 			</div>
 		</div>
 		<h1>Sign In or Create an Account</h1>
-	</div>
 	<!-- /page_header -->
 		<div class="row justify-content-center">
 				<%--Login part--%>
@@ -122,8 +121,8 @@
 		<!-- /row -->
 		</div>
 		<!-- /container -->
+	</div>
 	</main>
 	<!--/main-->
-</div>
 </asp:Content>
 

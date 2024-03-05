@@ -13,12 +13,7 @@ namespace Allaila.Helpers
         SqlConnection con;
         public UserOperations()
         {
-            startCon();
-        }
-        void startCon()
-        {
-            con = new SqlConnection(ConfigurationManager.ConnectionStrings["con"].ConnectionString);
-            con.Open();
+            con = ConnectionHelper.getCon();
         }
 
         public User fetchUser(string userId)

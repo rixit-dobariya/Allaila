@@ -8,18 +8,12 @@ using System.Data;
 
 namespace Allaila.Helpers
 {
-    public class RegisterLogin
+    public class RegisterLoginOperations
     {
         SqlConnection con;
-        public RegisterLogin()
+        public RegisterLoginOperations()
         {
-            startCon();
-        }
-        void startCon()
-        {
-            string s = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
-            con = new SqlConnection(s);
-            con.Open();
+            con = ConnectionHelper.getCon();
         }
 
         public void registerUser(string firstName, string lastName, string email, string phone, string password)
@@ -30,24 +24,20 @@ namespace Allaila.Helpers
             cmd.ExecuteNonQuery();
         }
 
-        public int getUserId(string email, string password)
+        public User getUser(string email, string password)
         {
-            string query = "select User_Id from User_Details_tbl where Email='"+email+"' and Password='"+password+"'";
-            SqlCommand cmd = new SqlCommand(query, con);
-            int userId = -1;
-            if(cmd.ExecuteScalar()!=null)
+            string query = "select User_Id, User_Role_Id from User_Details_tbl where Email='"+email+"' and Password='"+password+"'";
+            SqlDataAdapter da = new SqlDataAdapter(query, con);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            string userId = "-1";
+            string userRoleId = "";
+            if (ds.Tables[0].Rows.Count > 0)
             {
-                userId = Convert.ToInt32(cmd.ExecuteScalar().ToString());
+                userId = ds.Tables[0].Rows[0][0].ToString();
+                userRoleId = ds.Tables[0].Rows[0][1].ToString();
             }
-            return userId;
-        }
-
-        public int getUserRoleId(string email)
-        {
-            string query = "select User_Role_Id from User_Details_tbl where Email='"+email+"'";
-            SqlCommand cmd = new SqlCommand(query, con);
-
-            return Convert.ToInt32(cmd.ExecuteScalar().ToString());
+            return new User(userId, userRoleId);
         }
 
         public bool emailExists(string email)
