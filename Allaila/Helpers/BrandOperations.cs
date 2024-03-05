@@ -26,5 +26,21 @@ namespace Allaila.Helpers
             da.Fill(ds);
             return ds;
         }
+        public void deleteBrand(string brandId)
+        {
+            SqlCommand cmd = new SqlCommand("delete from Brand_Details_tbl where Brand_Id='" + brandId + "'", con);
+            cmd.ExecuteNonQuery();
+        }
+        public string getBrandName(string brandId)
+        {
+            SqlCommand cmd = new SqlCommand("select Brand_Name from Brand_Details_tbl where Brand_Id='" + brandId + "'", con);
+            return cmd.ExecuteScalar().ToString();
+        }
+        
+        public void updateBrand(string brandId, string brandName)
+        {
+            SqlCommand cmd = new SqlCommand("update Brand_Details_tbl set Brand_Name='" + brandName + "' where Brand_Id='" + brandId + "'", con);
+            cmd.ExecuteNonQuery();
+        }
     }
 }
