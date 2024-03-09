@@ -65,6 +65,7 @@
 					</div>
 
 					<!-- /form_container -->
+						<center><asp:Button ID="Button2" runat="server" Text="Sign Out" class="btn_1" OnClick="Button2_Click" /></center>
 				</div>
 				<!-- /box_account -->
 			</div>

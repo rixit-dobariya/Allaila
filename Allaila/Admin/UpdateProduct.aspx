@@ -1,8 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Site1.Master" AutoEventWireup="true" CodeBehind="AddProduct.aspx.cs" Inherits="Allaila.Admin.AddProduct" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Site1.Master" AutoEventWireup="true" CodeBehind="UpdateProduct.aspx.cs" Inherits="Allaila.Admin.UpdateProduct" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-        <main class="bg_gray">
+    <main class="bg_gray">
 		
 	<div class="container margin_30">
 		<div class="page_header">
@@ -10,7 +10,7 @@
 				<ul>
 					<li><a href="#">Home</a></li>
 					<li><a href="#">Product</a></li>
-					<li>Add Product</li>
+					<li>Update Product</li>
 				</ul>
 			</div>
 		</div>
@@ -19,7 +19,7 @@
 				<%--Login part--%>
 			<div class="col-xl-12 col-lg-12 col-md-12">
 				<div class="box_account">
-					<h3 class="client">Add Product</h3>
+					<h3 class="client">Update Product</h3>
 					<div class="form_container">
 						<div class="row">
 							<div class="form-group col">
@@ -30,6 +30,7 @@
 
 							Shoe Image:<asp:FileUpload ID="fuImage" runat="server" class="form-control"/>
 							<asp:Label ID="lblImageMessage" runat="server" ForeColor="Red" Visible="false"></asp:Label>
+								Upload Only if you want to replace it with old one
 							</div>
 						</div>
 						<div class="row">
@@ -88,11 +89,13 @@
 						</div>
 						</div>
 
+						<asp:HiddenField ID="hfImage" runat="server" />
+						<asp:HiddenField ID="hfProductId" runat="server" />
 
 						
 
 						<div class="text-center">
-							<asp:Button ID="btnAddProduct" runat="server" Text="Add Product" class="btn_1 full-width" ValidationGroup="loginGroup" OnClick="btnAddProduct_Click" />
+							<asp:Button ID="btnUpdateProduct" runat="server" Text="Update Product" class="btn_1 full-width" ValidationGroup="loginGroup" OnClick="btnUpdateProduct_Click" />
 						</div>
 						<asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="#FF3300" ValidationGroup="loginGroup" />
 						<asp:Label ID="lblResponse" runat="server" Visible="false"></asp:Label>

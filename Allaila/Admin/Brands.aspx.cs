@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using Allaila.Helpers;
+using System.IO;
 
 namespace Allaila.Admin
 {
@@ -24,18 +25,42 @@ namespace Allaila.Admin
             GridView1.DataSource = ds;
             GridView1.DataBind();
         }
-
-        protected void btnAddBrand_Click(object sender, EventArgs e)
+        public string uploadImage()
         {
-            if(btnAddBrand.Text.Equals("Add Brand"))
+            if (fuImage.HasFile)
             {
-                obj.addBrand(txtBrandName.Text);
-                lblResponse.Text = "Brand Added Successfully!";
+                string extension = Path.GetExtension(fuImage.FileName);
+                if (extension == ".jpg" || extension == ".jpeg" || extension == ".png")
+                {
+                    string image = "../img/brands/" + fuImage.FileName;
+                    fuImage.SaveAs(Server.MapPath(image));
+                    return image;
+                }
             }
             else
             {
+                if (btnAddBrand.Text.Equals("Add Brand"))
+                    lblError.Text = "Please upload an image";
+                return null;
+            }
+            return null;
+        }
+        protected void btnAddBrand_Click(object sender, EventArgs e)
+        {
+            string image = uploadImage();
+            if(btnAddBrand.Text.Equals("Add Brand") && image!=null)
+            {
+                obj.addBrand(txtBrandName.Text, image);
+                lblResponse.Text = "Brand Added Successfully!";
+            }
+            else if(btnAddBrand.Text.Equals("Update Brand"))
+            {
+                if(image == null)
+                {
+                    image = hfBrandImage.Value;
+                }
                 string brandId = hfBrandId.Value;
-                obj.updateBrand(brandId, txtBrandName.Text);
+                obj.updateBrand(brandId, txtBrandName.Text, image);
                 lblResponse.Text = "Brand Updated Successfully!";
                 btnAddBrand.Text = "Add Brand";
             }
@@ -54,8 +79,9 @@ namespace Allaila.Admin
             }
             else if(e.CommandName == "cmd_update")
             {
-                string brandName = obj.getBrandName(brandId);
-                txtBrandName.Text = brandName;
+                obj.getBrandInfo(brandId);
+                txtBrandName.Text = obj.brandName;
+                hfBrandImage.Value = obj.brandImage;
                 btnAddBrand.Text = "Update Brand";
                 hfBrandId.Value = brandId;
             }

@@ -24,7 +24,9 @@
 								<div class="col-12 pr-1">
 									<div class="form-group">
 										<asp:TextBox ID="txtBrandName" ValidationGroup="addGroup" runat="server" class="form-control" placeholder="Brand Name*"></asp:TextBox>
+										<asp:FileUpload ID="fuImage" runat="server" class="form-control" />
 										<asp:HiddenField ID="hfBrandId" runat="server" />
+										<asp:HiddenField ID="hfBrandImage" runat="server" />
 									</div>
 								</div>
 						</div>
@@ -32,7 +34,8 @@
 						<div class="text-center">
 							<asp:Button ID="btnAddBrand" ValidationGroup="addGroup" runat="server" Text="Add Brand" class="btn_1 full-width" OnClick="btnAddBrand_Click" />
 						</div>
-						<asp:Label ID="lblResponse" runat="server" Text="Label" Visible="false"></asp:Label>
+						<asp:Label ID="lblResponse" runat="server" Text="" ></asp:Label>
+						<asp:Label ID="lblError" ForeColor="Red" runat="server" Text="" ></asp:Label>
 						<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtBrandName" ValidationGroup="addGroup" Display="None" ErrorMessage="Please enter brand name"></asp:RequiredFieldValidator>
 						<asp:ValidationSummary ID="ValidationSummary2" runat="server" ForeColor="#FF3300" ValidationGroup="addGroup" />
 						
@@ -51,6 +54,11 @@
                             <asp:Label ID="Label1" runat="server" Text='<%# Eval("Brand_Id") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Brand Image">
+                        <ItemTemplate>
+                            <asp:Image ID="Image1" runat="server" Height="73px" ImageUrl='<%# Eval("Brand_Image") %>' Width="78px" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
                     <asp:TemplateField HeaderText="Brand Name">
                         <ItemTemplate>
                             <asp:Label ID="Label2" runat="server" Text='<%# Eval("Brand_Name") %>'></asp:Label>
@@ -58,7 +66,7 @@
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Number of Products">
                         <ItemTemplate>
-                            <asp:Label ID="Label3" runat="server" Text='<%# Eval("Brand_Id") %>'></asp:Label>
+                            <asp:Label ID="Label3" runat="server" Text='<%# Eval("Products") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
 					<asp:TemplateField HeaderText="Update">

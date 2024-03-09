@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using Allaila.Helpers;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace Allaila.Admin
 {
@@ -27,23 +28,54 @@ namespace Allaila.Admin
             GridView1.DataBind();
         }
 
-        protected void btnAddCategory_Click(object sender, EventArgs e)
+        string uploadImage()
         {
-            if (btnAddCategory.Text.Equals("Add Category"))
+            if(fuImage.HasFile)
             {
-                obj.addCateogry(txtCategoryName.Text);
-                lblResponse.Text = "Category Added Successfully!";
+                string extension = Path.GetExtension(fuImage.FileName);
+                if(extension == ".jpg" || extension == ".jpeg" || extension == ".png")
+                {
+                    string image = "../img/categories/" + fuImage.FileName;
+                    fuImage.SaveAs(Server.MapPath(image));
+                    return image;
+                }
             }
             else
             {
+                if(btnAddCategory.Text.Equals("Add Category"))
+                    lblError.Text = "Please upload an image";
+                return null;
+            }
+            return null;
+        }
+
+        protected void btnAddCategory_Click(object sender, EventArgs e)
+        {
+            string image = uploadImage();
+            if (btnAddCategory.Text.Equals("Add Category") && image != null)
+            {
+                obj.addCateogry(txtCategoryName.Text, image);
+                lblResponse.Text = "Category Added Successfully!";
+                txtCategoryName.Text = "";
+                lblResponse.Visible = true;
+                fillData();
+            }
+            if (btnAddCategory.Text.Equals("Update Category"))
+            {
+                if(image == null)
+                {
+                    image = hfImage.Value;
+                }
                 string categoryId = hfCategoryId.Value;
-                obj.updateCategory(categoryId, txtCategoryName.Text);
+                obj.updateCategory(categoryId, txtCategoryName.Text, image);
                 lblResponse.Text = "Category Updated Successfully!";
                 btnAddCategory.Text = "Add Category";
+                txtCategoryName.Text = "";
+                lblResponse.Visible = true;
+                fillData();
             }
-            txtCategoryName.Text = "";
-            lblResponse.Visible = true;
-            fillData();
+            
+
         }
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -56,10 +88,11 @@ namespace Allaila.Admin
             }
             else if (e.CommandName == "cmd_update")
             {
-                string categoryName = obj.getCategoryName(categoryId);
-                txtCategoryName.Text = categoryName;
-                btnAddCategory.Text = "Update Category";
+                obj.getCategoryInfo(categoryId);
+                txtCategoryName.Text = obj.categoryName;
                 hfCategoryId.Value = categoryId;
+                hfImage.Value = obj.categoryImage;
+                btnAddCategory.Text = "Update Category";
             }
         }
     }

@@ -22,11 +22,11 @@ namespace Allaila
         void fillData()
         {
             String userId = Session["userId"].ToString();
-            User user = userOps.fetchUser(userId);
-            txtFirstName.Text = user.firstName;
-            txtLastName.Text = user.lastName;
-            txtEmail.Text = user.email;
-            txtPhoneNo.Text = user.phoneNo;
+            userOps.fetchUser(userId);
+            txtFirstName.Text = userOps.firstName;
+            txtLastName.Text = userOps.lastName;
+            txtEmail.Text = userOps.email;
+            txtPhoneNo.Text = userOps.phoneNo;
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -38,6 +38,12 @@ namespace Allaila
             string phoneNo = txtPhoneNo.Text;
             userOps.updateUser(userId, firstName, lastName, email, phoneNo);
             fillData();
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("Login.aspx");
         }
     }
 }

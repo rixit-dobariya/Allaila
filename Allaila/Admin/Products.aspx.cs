@@ -24,5 +24,19 @@ namespace Allaila.Admin
             GridView1.DataSource = ds;
             GridView1.DataBind();
         }
+
+        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            string productId = e.CommandArgument.ToString();
+            if(e.CommandName.Equals("cmd_delete"))
+            {
+                obj.deleteProduct(productId);
+                fillData();
+            }
+            else if(e.CommandName.Equals("cmd_update"))
+            {
+                Response.Redirect("UpdateProduct.aspx?productId="+productId);
+            }
+        }
     }
 }

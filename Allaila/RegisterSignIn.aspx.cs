@@ -56,16 +56,16 @@ namespace Allaila
             string email = txtLoginEmail.Text;
             string password = txtLoginPassword.Text;
 
-            User user = obj.getUser(email, password);
-            if (user.userId == "-1")
+            obj.getUser(email, password);
+            if (obj.userId == "-1")
             {
                 lblLoginResult.Text = "Invalid email or password";
                 lblLoginResult.Visible = true;
             }
             else
             {
-                Session["userId"] = user.userId;
-                string userRoleId = user.userRoleId;
+                Session["userId"] = obj.userId;
+                string userRoleId = obj.userRoleId;
                 if (userRoleId == "0")
                 {
                     Response.Redirect("index.aspx");

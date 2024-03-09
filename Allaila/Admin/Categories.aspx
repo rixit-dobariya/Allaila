@@ -1,5 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Site1.Master" AutoEventWireup="true" CodeBehind="Categories.aspx.cs" Inherits="Allaila.Admin.Categories" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+            height: 259px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <main class="bg_gray">
@@ -15,7 +21,7 @@
 			<h1>Categories page</h1>
 		</div>
 		<div class="row justify-content-center">
-			<div class="col-xl-4 col-lg-4 col-md-4">
+			<div class="auto-style1 col-xl-4 col-lg-4 col-md-4">
 				<div class="box_account">
 					<h6 class="new_client">Add Categories</h6>
 					<div class="form_container">
@@ -26,6 +32,10 @@
 										<asp:TextBox ID="txtCategoryName" ValidationGroup="addGroup" runat="server" class="form-control" placeholder="Category Name*"></asp:TextBox>
 										<asp:HiddenField ID="hfCategoryId" runat="server" />
 									</div>
+									<div class="form-group">
+										<asp:FileUpload ID="fuImage" runat="server" class="form-control" />
+										<asp:HiddenField ID="hfImage" runat="server" />
+									</div>
 								</div>
 						</div>
 						<hr />
@@ -35,7 +45,8 @@
 						<asp:Label ID="lblResponse" runat="server" Text="Label" Visible="false"></asp:Label>
 						<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtCategoryName" ValidationGroup="addGroup" Display="None" ErrorMessage="Please enter brand name"></asp:RequiredFieldValidator>
 						<asp:ValidationSummary ID="ValidationSummary2" runat="server" ForeColor="#FF3300" ValidationGroup="addGroup" />
-						
+						<asp:Label ID="lblError" runat="server" Text="" ForeColor="Red"></asp:Label>
+
 					</div>
 
 					<!-- /form_container -->
@@ -51,6 +62,11 @@
                             <asp:Label ID="Label1" runat="server" Text='<%# Eval("Category_Id") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
+					<asp:TemplateField HeaderText="Category Image">
+                        <ItemTemplate>
+							<asp:Image ID="Image1" runat="server" Height="78px" ImageUrl='<%# Eval("Category_Image") %>' Width="76px" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
                     <asp:TemplateField HeaderText="Category Name">
                         <ItemTemplate>
                             <asp:Label ID="Label2" runat="server" Text='<%# Eval("Category_Name") %>'></asp:Label>
@@ -58,7 +74,7 @@
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Number of Products">
                         <ItemTemplate>
-                            <asp:Label ID="Label3" runat="server" Text='<%# Eval("Category_Id") %>'></asp:Label>
+                            <asp:Label ID="Label3" runat="server" Text='<%# Eval("Products") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
 					<asp:TemplateField HeaderText="Update">
