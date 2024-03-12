@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
+﻿using Allaila.Helpers;
+using System;
 using System.Web.UI.WebControls;
-using Allaila.Helpers; 
 
 namespace Allaila.Admin
 {
@@ -14,7 +10,7 @@ namespace Allaila.Admin
         protected void Page_Load(object sender, EventArgs e)
         {
             obj = new ResponseOperations();
-            if(!IsPostBack)
+            if (!IsPostBack)
                 fillData();
         }
 
@@ -26,7 +22,7 @@ namespace Allaila.Admin
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if(e.CommandName.Equals("cmd_delete"))
+            if (e.CommandName.Equals("cmd_delete"))
             {
                 obj.deleteResponse(e.CommandArgument.ToString());
                 fillData();

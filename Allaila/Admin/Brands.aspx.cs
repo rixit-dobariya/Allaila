@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+﻿using Allaila.Helpers;
+using System;
 using System.Data;
-using Allaila.Helpers;
 using System.IO;
+using System.Web.UI.WebControls;
 
 namespace Allaila.Admin
 {
@@ -16,7 +12,7 @@ namespace Allaila.Admin
         protected void Page_Load(object sender, EventArgs e)
         {
             this.obj = new BrandOperations();
-            if(!IsPostBack)
+            if (!IsPostBack)
                 fillData();
         }
         void fillData()
@@ -48,14 +44,14 @@ namespace Allaila.Admin
         protected void btnAddBrand_Click(object sender, EventArgs e)
         {
             string image = uploadImage();
-            if(btnAddBrand.Text.Equals("Add Brand") && image!=null)
+            if (btnAddBrand.Text.Equals("Add Brand") && image != null)
             {
                 obj.addBrand(txtBrandName.Text, image);
                 lblResponse.Text = "Brand Added Successfully!";
             }
-            else if(btnAddBrand.Text.Equals("Update Brand"))
+            else if (btnAddBrand.Text.Equals("Update Brand"))
             {
-                if(image == null)
+                if (image == null)
                 {
                     image = hfBrandImage.Value;
                 }
@@ -72,12 +68,12 @@ namespace Allaila.Admin
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             string brandId = e.CommandArgument.ToString();
-            if(e.CommandName == "cmd_delete")
+            if (e.CommandName == "cmd_delete")
             {
                 obj.deleteBrand(brandId);
                 fillData();
             }
-            else if(e.CommandName == "cmd_update")
+            else if (e.CommandName == "cmd_update")
             {
                 obj.getBrandInfo(brandId);
                 txtBrandName.Text = obj.brandName;

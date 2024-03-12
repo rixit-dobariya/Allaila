@@ -68,12 +68,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\AddProduct.aspx" />
+    <Content Include="Admin\AddUser.aspx" />
     <Content Include="Admin\Brands.aspx" />
     <Content Include="Admin\Categories.aspx" />
     <Content Include="Admin\index.aspx" />
     <Content Include="Admin\Products.aspx" />
     <Content Include="Admin\Responses.aspx" />
     <Content Include="Admin\UpdateProduct.aspx" />
+    <Content Include="Admin\UpdateUser.aspx" />
+    <Content Include="Admin\Users.aspx" />
     <Content Include="App_Data\shoes_store_db.mdf" />
     <Content Include="App_Data\shoes_store_db_log.ldf">
       <DependentUpon>shoes_store_db.mdf</DependentUpon>
@@ -536,6 +539,13 @@
     <Compile Include="Admin\AddProduct.aspx.designer.cs">
       <DependentUpon>AddProduct.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\AddUser.aspx.cs">
+      <DependentUpon>AddUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddUser.aspx.designer.cs">
+      <DependentUpon>AddUser.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Brands.aspx.cs">
       <DependentUpon>Brands.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -584,6 +594,20 @@
     </Compile>
     <Compile Include="Admin\UpdateProduct.aspx.designer.cs">
       <DependentUpon>UpdateProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UpdateUser.aspx.cs">
+      <DependentUpon>UpdateUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UpdateUser.aspx.designer.cs">
+      <DependentUpon>UpdateUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Users.aspx.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Users.aspx.designer.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>

@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Configuration;
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace Allaila.Helpers
 {
@@ -28,7 +24,7 @@ namespace Allaila.Helpers
 
         public void getUser(string email, string password)
         {
-            string query = "select User_Id, User_Role_Id from User_Details_tbl where Email='"+email+"' and Password='"+password+"'";
+            string query = "select User_Id, User_Role_Id from User_Details_tbl where Email='" + email + "' and Password='" + password + "'";
             SqlDataAdapter da = new SqlDataAdapter(query, con);
             DataSet ds = new DataSet();
             da.Fill(ds);
@@ -45,7 +41,7 @@ namespace Allaila.Helpers
         {
             string query = "select count(*) from User_Details_tbl where Email='" + email + "'";
             SqlCommand cmd = new SqlCommand(query, con);
-            if(cmd.ExecuteScalar()!=null && Convert.ToInt32(cmd.ExecuteScalar()) > 0)
+            if (cmd.ExecuteScalar() != null && Convert.ToInt32(cmd.ExecuteScalar()) > 0)
             {
                 return true;
             }

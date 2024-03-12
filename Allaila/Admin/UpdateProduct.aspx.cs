@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using Allaila.Helpers;
+﻿using Allaila.Helpers;
+using System;
 using System.Data;
 using System.IO;
+using System.Web.UI.WebControls;
 
 namespace Allaila.Admin
 {
@@ -18,7 +14,7 @@ namespace Allaila.Admin
             obj = new ProductOperations();
             loadBrands();
             loadCategories();
-            if(!IsPostBack)
+            if (!IsPostBack)
                 loadData();
         }
 
@@ -61,7 +57,7 @@ namespace Allaila.Admin
             hfProductId.Value = productId.ToString();
 
             ddlBrandId.SelectedValue = obj.brandId.ToString();
-            ddlCategoryId.SelectedValue = obj.categoryId.ToString();            
+            ddlCategoryId.SelectedValue = obj.categoryId.ToString();
         }
 
         protected void btnUpdateProduct_Click(object sender, EventArgs e)
@@ -69,7 +65,7 @@ namespace Allaila.Admin
             if (fuImage.HasFile)
             {
                 string extension = Path.GetExtension(fuImage.FileName);
-                if(extension == ".jpg" || extension == ".jpeg" || extension == ".png")
+                if (extension == ".jpg" || extension == ".jpeg" || extension == ".png")
                 {
                     string img = "../img/products/shoes/" + fuImage.FileName;
                     fuImage.SaveAs(Server.MapPath(img));

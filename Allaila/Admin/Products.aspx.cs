@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using Allaila.Helpers;
+﻿using Allaila.Helpers;
+using System;
 using System.Data;
+using System.Web.UI.WebControls;
 
 namespace Allaila.Admin
 {
@@ -28,14 +24,14 @@ namespace Allaila.Admin
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             string productId = e.CommandArgument.ToString();
-            if(e.CommandName.Equals("cmd_delete"))
+            if (e.CommandName.Equals("cmd_delete"))
             {
                 obj.deleteProduct(productId);
                 fillData();
             }
-            else if(e.CommandName.Equals("cmd_update"))
+            else if (e.CommandName.Equals("cmd_update"))
             {
-                Response.Redirect("UpdateProduct.aspx?productId="+productId);
+                Response.Redirect("UpdateProduct.aspx?productId=" + productId);
             }
         }
     }

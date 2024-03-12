@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using Allaila.Helpers;
+﻿using Allaila.Helpers;
+using System;
 using System.Data;
 using System.IO;
+using System.Web.UI.WebControls;
 
 namespace Allaila.Admin
 {
@@ -46,7 +42,7 @@ namespace Allaila.Admin
         {
             //image validation
             string imgExtension = Path.GetExtension(fuImage.FileName);
-            if(imgExtension == ".jpg" || imgExtension == ".png" || imgExtension == ".jpeg")
+            if (imgExtension == ".jpg" || imgExtension == ".png" || imgExtension == ".jpeg")
             {
                 string img = "../img/products/shoes/" + fuImage.FileName;
                 Server.MapPath(img);
@@ -82,6 +78,6 @@ namespace Allaila.Admin
             txtDiscount.Text = "";
         }
 
-        
+
     }
 }

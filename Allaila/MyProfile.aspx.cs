@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using Allaila.Helpers;
+﻿using Allaila.Helpers;
+using System;
 
 namespace Allaila
 {
@@ -15,7 +10,7 @@ namespace Allaila
         {
             userOps = new UserOperations();
             if (!IsPostBack)
-            { 
+            {
                 fillData();
             }
         }
@@ -36,7 +31,7 @@ namespace Allaila
             string lastName = txtLastName.Text;
             string email = txtEmail.Text;
             string phoneNo = txtPhoneNo.Text;
-            userOps.updateUser(userId, firstName, lastName, email, phoneNo);
+            userOps.updateUser(userId, firstName, lastName, email, phoneNo, "0");
             fillData();
         }
 

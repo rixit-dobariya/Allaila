@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using Allaila.Helpers;
+﻿using Allaila.Helpers;
+using System;
 using System.Data;
-using System.Data.SqlClient;
 using System.IO;
+using System.Web.UI.WebControls;
 
 namespace Allaila.Admin
 {
@@ -30,10 +25,10 @@ namespace Allaila.Admin
 
         string uploadImage()
         {
-            if(fuImage.HasFile)
+            if (fuImage.HasFile)
             {
                 string extension = Path.GetExtension(fuImage.FileName);
-                if(extension == ".jpg" || extension == ".jpeg" || extension == ".png")
+                if (extension == ".jpg" || extension == ".jpeg" || extension == ".png")
                 {
                     string image = "../img/categories/" + fuImage.FileName;
                     fuImage.SaveAs(Server.MapPath(image));
@@ -42,7 +37,7 @@ namespace Allaila.Admin
             }
             else
             {
-                if(btnAddCategory.Text.Equals("Add Category"))
+                if (btnAddCategory.Text.Equals("Add Category"))
                     lblError.Text = "Please upload an image";
                 return null;
             }
@@ -62,7 +57,7 @@ namespace Allaila.Admin
             }
             if (btnAddCategory.Text.Equals("Update Category"))
             {
-                if(image == null)
+                if (image == null)
                 {
                     image = hfImage.Value;
                 }
@@ -74,7 +69,7 @@ namespace Allaila.Admin
                 lblResponse.Visible = true;
                 fillData();
             }
-            
+
 
         }
 

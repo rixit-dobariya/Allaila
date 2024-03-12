@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
 
 namespace Allaila.Helpers
@@ -18,7 +14,7 @@ namespace Allaila.Helpers
         }
         public void addBrand(string brandName, string image)
         {
-            SqlCommand cmd = new SqlCommand("insert into Brand_Details_tbl(Brand_Name, Brand_Image) values('" + brandName + "','"+image+"')", con);
+            SqlCommand cmd = new SqlCommand("insert into Brand_Details_tbl(Brand_Name, Brand_Image) values('" + brandName + "','" + image + "')", con);
             cmd.ExecuteNonQuery();
         }
         public DataSet getBrandDataSet()
@@ -41,10 +37,10 @@ namespace Allaila.Helpers
             brandName = ds.Tables[0].Rows[0][0].ToString();
             brandImage = ds.Tables[0].Rows[0][1].ToString();
         }
-        
+
         public void updateBrand(string brandId, string brandName, string brandImage)
         {
-            SqlCommand cmd = new SqlCommand("update Brand_Details_tbl set Brand_Name='" + brandName + "', Brand_Image='"+brandImage+"' where Brand_Id='" + brandId + "'", con);
+            SqlCommand cmd = new SqlCommand("update Brand_Details_tbl set Brand_Name='" + brandName + "', Brand_Image='" + brandImage + "' where Brand_Id='" + brandId + "'", con);
             cmd.ExecuteNonQuery();
         }
     }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
 
 namespace Allaila.Helpers
@@ -19,7 +15,7 @@ namespace Allaila.Helpers
         }
         public void addCateogry(string categoryName, string image)
         {
-            SqlCommand cmd = new SqlCommand("insert into Category_Details_tbl(Category_Name, Category_Image) values('" + categoryName + "','"+ image + "')", con);
+            SqlCommand cmd = new SqlCommand("insert into Category_Details_tbl(Category_Name, Category_Image) values('" + categoryName + "','" + image + "')", con);
             cmd.ExecuteNonQuery();
         }
         public DataSet getCategoryDataSet()
@@ -36,7 +32,7 @@ namespace Allaila.Helpers
         }
         public void getCategoryInfo(string categoryId)
         {
-            SqlDataAdapter da = new SqlDataAdapter("select Category_Name, Category_Image from Category_Details_tbl where Category_Id='" + categoryId   + "'", con);
+            SqlDataAdapter da = new SqlDataAdapter("select Category_Name, Category_Image from Category_Details_tbl where Category_Id='" + categoryId + "'", con);
             DataSet ds = new DataSet();
             da.Fill(ds);
             categoryName = ds.Tables[0].Rows[0][0].ToString();
@@ -45,7 +41,7 @@ namespace Allaila.Helpers
 
         public void updateCategory(string categoryId, string categoryName, string image)
         {
-            SqlCommand cmd = new SqlCommand("update Category_Details_tbl set Category_Name='" + categoryName+ "', Category_Image='"+ image + "' where Category_Id='" + categoryId + "'", con);
+            SqlCommand cmd = new SqlCommand("update Category_Details_tbl set Category_Name='" + categoryName + "', Category_Image='" + image + "' where Category_Id='" + categoryId + "'", con);
             cmd.ExecuteNonQuery();
         }
     }

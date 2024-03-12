@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Configuration;
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace Allaila.Helpers
 {
@@ -40,14 +36,14 @@ namespace Allaila.Helpers
 
         public void addProduct(string shoeName, int brandId, int categoryId, string description, int price, int discount, string img, string stock1, string stock2, string stock3, string stock4, string stock5)
         {
-            string query = "insert into Shoes_Details_tbl(Brand_Id, Category_Id, Name, Description, Price, Discount, Sold_Quantity, Is_Deleted, Upload_Date, Image, Size_6_Stock, Size_7_Stock, Size_8_Stock, Size_9_Stock, Size_10_Stock) values(" + brandId + "," + categoryId + ",'" + shoeName + "','" + description + "'," + price + "," + discount + ", 0, 0,'" + DateTime.Now.ToString() + "','" + img + "',"+stock1+","+ stock2+ ","+ stock3 + ","+ stock4 + ","+ stock5 + ")";
+            string query = "insert into Shoes_Details_tbl(Brand_Id, Category_Id, Name, Description, Price, Discount, Sold_Quantity, Is_Deleted, Upload_Date, Image, Size_6_Stock, Size_7_Stock, Size_8_Stock, Size_9_Stock, Size_10_Stock) values(" + brandId + "," + categoryId + ",'" + shoeName + "','" + description + "'," + price + "," + discount + ", 0, 0,'" + DateTime.Now.ToString() + "','" + img + "'," + stock1 + "," + stock2 + "," + stock3 + "," + stock4 + "," + stock5 + ")";
             SqlCommand cmd = new SqlCommand(query, con);
             cmd.ExecuteNonQuery();
         }
 
         public void deleteProduct(string productId)
         {
-            string query = "update Shoes_Details_tbl set Is_Deleted=1 where Shoe_Id="+productId;
+            string query = "update Shoes_Details_tbl set Is_Deleted=1 where Shoe_Id=" + productId;
             SqlCommand cmd = new SqlCommand(query, con);
             cmd.ExecuteNonQuery();
         }
@@ -74,7 +70,7 @@ namespace Allaila.Helpers
 
         public void updateProduct()
         {
-            SqlCommand cmd = new SqlCommand($"update Shoes_Details_tbl set Brand_Id={brandId}, Category_Id={categoryId}, Name='{productName}', Description='{description}', Price={price}, Discount={discount}, Image='{productImage}', Size_6_Stock={stock1}, Size_7_Stock={stock2}, Size_8_Stock={stock3}, Size_9_Stock={stock4}, Size_10_Stock={stock5} where Shoe_Id="+productId, con);
+            SqlCommand cmd = new SqlCommand($"update Shoes_Details_tbl set Brand_Id={brandId}, Category_Id={categoryId}, Name='{productName}', Description='{description}', Price={price}, Discount={discount}, Image='{productImage}', Size_6_Stock={stock1}, Size_7_Stock={stock2}, Size_8_Stock={stock3}, Size_9_Stock={stock4}, Size_10_Stock={stock5} where Shoe_Id=" + productId, con);
             cmd.ExecuteNonQuery();
         }
     }
