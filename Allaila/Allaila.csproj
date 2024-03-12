@@ -286,6 +286,7 @@
     <Content Include="MyProfile.aspx" />
     <Content Include="RegisterSignIn.aspx" />
     <Content Include="sass\compass_app_log.txt" />
+    <Content Include="Shop.aspx" />
     <Content Include="Template\html\404.html" />
     <Content Include="Template\html\about-2.html" />
     <Content Include="Template\html\about.html" />
@@ -651,6 +652,13 @@
     </Compile>
     <Compile Include="RegisterSignIn.aspx.designer.cs">
       <DependentUpon>RegisterSignIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shop.aspx.cs">
+      <DependentUpon>Shop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shop.aspx.designer.cs">
+      <DependentUpon>Shop.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
