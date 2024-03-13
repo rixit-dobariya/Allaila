@@ -20,16 +20,24 @@ namespace Allaila.Helpers
         public int brandId;
         public int categoryId;
         public string description;
+        DataSet ds;
 
         public ProductOperations()
         {
             con = ConnectionHelper.getCon();
+            ds = new DataSet();
         }
 
         public DataSet getProductDataSet()
         {
-            DataSet ds = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter("select Shoe_Id, Name, Price, Discount, Image, Size_6_Stock, Size_7_Stock, Size_8_Stock, Size_9_Stock, Size_10_Stock from Shoes_Details_tbl where Is_Deleted=0", con);
+            da.Fill(ds);
+            return ds;
+        }
+
+        public DataSet getProductData()
+        {
+            SqlDataAdapter da = new SqlDataAdapter("select Shoe_Id, Name, Price, Discount, Image, Price-(Price*Discount/100) as New_Price from Shoes_Details_tbl where Is_Deleted=0", con);
             da.Fill(ds);
             return ds;
         }

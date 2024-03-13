@@ -207,34 +207,32 @@
 						<div class="col-12 col-md-4 col-xl-12">
 							<div class="grid_item">
 								<figure>
-									<span class="ribbon off"><asp:Label ID="Label4" runat="server" Text="-30%"></asp:Label></span>
-									<asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="product-detail-1.html">
+									<span class="ribbon off"><asp:Label ID="Label4" runat="server" Text='<%# "-" + Eval("Discount")+"%" %>' ></asp:Label></span>
+									<asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl='<%# "ProductDetails.aspx?Shoe_Id=" + Eval("Shoe_Id") %>' >
 										<asp:Image ID="Image1" runat="server" class="img-fluid lazy" src="img/products/product_placeholder_square_medium.jpg" data-src="img/products/shoes/1.jpg" alt="" />
 									</asp:HyperLink>
-									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%--<div data-countdown="2019/05/15" class="countdown"></div>--%>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									<%--<div data-countdown="2019/05/15" class="countdown"></div>--%>
 								</figure>
-								<asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="product-detail-1.html">
+								<asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl='<%# "ProductDetails.aspx?Shoe_Id=" + Eval("Shoe_Id") %>' >
 									<h3>
-										<asp:Label ID="Label3" runat="server" Text="Armor Air x Fear"></asp:Label>
+										<asp:Label ID="Label3" runat="server" Text='<%# Eval("Name") %>'></asp:Label>
 									</h3>
 								</asp:HyperLink>
 								<div class="price_box">
 									<span class="new_price">
-										<asp:Label ID="Label1" runat="server" Text="$48.00"></asp:Label>
+										<asp:Label ID="Label1" runat="server" Text='<%# "₹" + Eval("New_Price") %>'></asp:Label>
 									</span>
 									<span class="old_price">
-										<asp:Label ID="Label2" runat="server" Text="$48.00"></asp:Label>
+										<asp:Label ID="Label2" runat="server" Text='<%# "₹" + Eval("Price") %>'></asp:Label>
 									</span>
 								</div>
 								<ul>
 									<li>
-										<asp:HyperLink ID="HyperLink3" runat="server" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to favorites"><i class="ti-heart"></i><span>Add to favorites</span></asp:HyperLink>
+										<asp:HyperLink NavigateUrl='<%# "Wishlist.aspx?Shoe_Id=" + Eval("Shoe_Id") %>' ID="HyperLink3" runat="server"  class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to favorites"><i class="ti-heart"></i><span>Add to favorites</span></asp:HyperLink>
 									</li>
 									<li>
-										<asp:HyperLink ID="HyperLink4" runat="server" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left"  title="Add to compare"><i class="ti-control-shuffle"></i><span>Add to compare</span></asp:HyperLink>
-									</li>
-									<li>
-										<asp:HyperLink ID="HyperLink5" runat="server" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to cart"><i class="ti-shopping-cart"></i><span>Add to cart</span></asp:HyperLink>
+										<asp:HyperLink NavigateUrl='<%# "Cart.aspx?Shoe_Id=" + Eval("Shoe_Id") %>' ID="HyperLink5" runat="server" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to cart"><i class="ti-shopping-cart"></i><span>Add to cart</span></asp:HyperLink>
 									</li>
 								</ul>
 							</div>

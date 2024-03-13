@@ -22,7 +22,7 @@ namespace Allaila
 
         void fillDataList()
         {
-            DataList1.DataSource =obj.getProductDataSet();
+            DataList1.DataSource =obj.getProductData();
             DataList1.DataBind();
         }
     }
