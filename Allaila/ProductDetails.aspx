@@ -4,7 +4,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <main>
 	    <div class="container margin_30">
-	        <div class="countdown_inner">-20% This offer ends in <div data-countdown="2019/05/15" class="countdown"></div>
+	        <%--<div class="countdown_inner">-20% This offer ends in <div data-countdown="2019/05/15" class="countdown"></div>--%>
 	        </div>
 	        <div class="row">
 	            <div class="col-md-6">
@@ -45,11 +45,11 @@
 	                </div>
 	                <!-- /page_header -->
 	                <div class="prod_info">
-	                    <h1><asp:Label ID="Label1" runat="server" Text="Label"></asp:Label></h1>
+	                    <h1><asp:Label ID="lblName" runat="server" Text="Label"></asp:Label></h1>
 	                    <span class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i><em>4 reviews</em></span>
-	                    <p><small>SKU: MTKRY-001</small><br>Sed ex labitur adolescens scriptorem. Te saepe verear tibique sed. Et wisi ridens vix, lorem iudico blandit mel cu. Ex vel sint zril oportere, amet wisi aperiri te cum.</p>
+	                    <%--<p><small>SKU: MTKRY-001</small><br>Sed ex labitur adolescens scriptorem. Te saepe verear tibique sed. Et wisi ridens vix, lorem iudico blandit mel cu. Ex vel sint zril oportere, amet wisi aperiri te cum.</p>--%>
 	                    <div class="prod_options">
-	                        <div class="row">
+	                        <%--<div class="row">
 	                            <label class="col-xl-5 col-lg-5  col-md-6 col-6 pt-0"><strong>Color</strong></label>
 	                            <div class="col-xl-4 col-lg-5 col-md-6 col-6 colors">
 	                                <ul>
@@ -59,7 +59,7 @@
 	                                    <li><a href="#0" class="color color_4"></a></li>
 	                                </ul>
 	                            </div>
-	                        </div>
+	                        </div>--%>
 	                        <div class="row">
 	                            <label class="col-xl-5 col-lg-5 col-md-6 col-6"><strong>Size</strong> - Size Guide <a href="#0" data-bs-toggle="modal" data-bs-target="#size-modal"><i class="ti-help-alt"></i></a></label>
 	                            <div class="col-xl-4 col-lg-5 col-md-6 col-6">
@@ -97,9 +97,9 @@
 	                        <li>
 	                            <a href="#"><i class="ti-heart"></i><span>Add to Wishlist</span></a>
 	                        </li>
-	                        <li>
+	                       <%-- <li>
 	                            <a href="#"><i class="ti-control-shuffle"></i><span>Add to Compare</span></a>
-	                        </li>
+	                        </li>--%>
 	                    </ul>
 	                </div>
 	                <!-- /product_actions -->
@@ -376,7 +376,7 @@
 	    </div>--%>
 	    <!-- /container -->
 
-	    <div class="feat">
+	    <div class="feat mb-0">
 			<div class="container">
 				<ul>
 					<li>
