@@ -209,7 +209,7 @@
 								<figure>
 									<span class="ribbon off"><asp:Label ID="Label4" runat="server" Text='<%# "-" + Eval("Discount")+"%" %>' ></asp:Label></span>
 									<asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl='<%# "ProductDetails.aspx?Shoe_Id=" + Eval("Shoe_Id") %>' >
-										<asp:Image ID="Image1" runat="server" class="img-fluid lazy" src="img/products/product_placeholder_square_medium.jpg" data-src="img/products/shoes/1.jpg" alt="" />
+										<asp:Image ID="Image1" runat="server" class="img-fluid lazy" ImageUrl='<%# Eval("Image") %>' data-src="img/products/shoes/1.jpg" alt="" />
 									</asp:HyperLink>
 									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 									<%--<div data-countdown="2019/05/15" class="countdown"></div>--%>

@@ -619,6 +619,7 @@
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="Helpers\BrandOperations.cs" />
+    <Compile Include="Helpers\CartOperations.cs" />
     <Compile Include="Helpers\CategoryOperations.cs" />
     <Compile Include="Helpers\ConnectionHelper.cs" />
     <Compile Include="Helpers\ProductOperations.cs" />
@@ -632,6 +633,7 @@
     <Compile Include="Helpers\WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\WishlistOperations.cs" />
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
