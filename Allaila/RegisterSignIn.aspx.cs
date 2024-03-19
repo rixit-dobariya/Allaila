@@ -63,11 +63,11 @@ namespace Allaila
                 string userRoleId = obj.userRoleId;
                 if (userRoleId == "0")
                 {
-                    Response.Redirect("index.aspx");
+                    Response.Redirect("Default.aspx");
                 }
                 else
                 {
-                    Response.Redirect("Admin/index.aspx");
+                    Response.Redirect("Admin/Default.aspx");
                 }
             }
         }

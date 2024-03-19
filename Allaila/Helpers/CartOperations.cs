@@ -32,10 +32,20 @@ namespace Allaila.Helpers
         public DataSet getCartDataSet(int userId)
         {
             DataSet ds = new DataSet();
-            string query = $"select s.Image, s.Name, c.Size, c.Quantity, s.Price-(s.Price*s.Discount/100) as Price from Shoes_Details_tbl as s inner join Cart_Details_tbl as c on s.Shoe_Id = c.Product_Id where w.User_Id={userId}";
+            string query = $"select s.Image, s.Name, c.Size, c.Quantity, s.Price-(s.Price*s.Discount/100) as Price from Shoes_Details_tbl as s inner join Cart_Details_tbl as c on s.Shoe_Id = c.Product_Id where c.User_Id={userId}";
             SqlDataAdapter da = new SqlDataAdapter(query, con);
             da.Fill(ds);
             return ds;
+        }
+
+        public bool recordExits(string userId, string shoeId, string size)
+        {
+            string query = $"select count(*) from Cart_Details_tbl where User_Id={userId} and Product_Id={shoeId} and Size={size}";
+            SqlCommand cmd = new SqlCommand(query, con);
+            if(cmd.ExecuteScalar().ToString()!="0")
+                return true;
+            else
+                return false;
         }
     }
 }

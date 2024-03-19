@@ -10,7 +10,7 @@ namespace Allaila.Helpers
         public string productId;
         public string productImage;
         public string productName;
-        public int price;
+        public double price;
         public int discount;
         public int stock1;
         public int stock2;
@@ -20,6 +20,8 @@ namespace Allaila.Helpers
         public int brandId;
         public int categoryId;
         public string description;
+        public string categoryName;
+        public string brandName;
         DataSet ds;
 
         public ProductOperations()
@@ -42,7 +44,7 @@ namespace Allaila.Helpers
             return ds;
         }
 
-        public void addProduct(string shoeName, int brandId, int categoryId, string description, int price, int discount, string img, string stock1, string stock2, string stock3, string stock4, string stock5)
+        public void addProduct(string shoeName, int brandId, int categoryId, string description, double price, int discount, string img, string stock1, string stock2, string stock3, string stock4, string stock5)
         {
             string query = "insert into Shoes_Details_tbl(Brand_Id, Category_Id, Name, Description, Price, Discount, Sold_Quantity, Is_Deleted, Upload_Date, Image, Size_6_Stock, Size_7_Stock, Size_8_Stock, Size_9_Stock, Size_10_Stock) values(" + brandId + "," + categoryId + ",'" + shoeName + "','" + description + "'," + price + "," + discount + ", 0, 0,'" + DateTime.Now.ToString() + "','" + img + "'," + stock1 + "," + stock2 + "," + stock3 + "," + stock4 + "," + stock5 + ")";
             SqlCommand cmd = new SqlCommand(query, con);
@@ -67,13 +69,21 @@ namespace Allaila.Helpers
             productImage = ds.Tables[0].Rows[0][6].ToString();
             description = ds.Tables[0].Rows[0][3].ToString();
             productName = ds.Tables[0].Rows[0][2].ToString();
-            price = Convert.ToInt32(ds.Tables[0].Rows[0][4]);
+            price = Convert.ToDouble(ds.Tables[0].Rows[0][4]);
             discount = Convert.ToInt32(ds.Tables[0].Rows[0][5]);
             stock1 = Convert.ToInt32(ds.Tables[0].Rows[0][7]);
             stock2 = Convert.ToInt32(ds.Tables[0].Rows[0][8]);
             stock3 = Convert.ToInt32(ds.Tables[0].Rows[0][9]);
             stock4 = Convert.ToInt32(ds.Tables[0].Rows[0][10]);
             stock5 = Convert.ToInt32(ds.Tables[0].Rows[0][11]);
+
+            BrandOperations brandObj = new BrandOperations();
+            brandObj.getBrandInfo(brandId.ToString());
+            brandName = brandObj.brandName;
+
+            CategoryOperations catObj = new CategoryOperations();
+            catObj.getCategoryInfo(categoryId.ToString());
+            categoryName = catObj.categoryName;
         }
 
         public void updateProduct()

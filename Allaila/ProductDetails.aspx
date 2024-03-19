@@ -46,6 +46,7 @@
 	                <!-- /page_header -->
 	                <div class="prod_info">
 	                    <h1><asp:Label ID="lblName" runat="server" Text="Label"></asp:Label></h1>
+						<asp:HiddenField ID="hfShoeId" runat="server" />
 	                    <span class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i><em>4 reviews</em></span>
 	                    <%--<p><small>SKU: MTKRY-001</small><br>Sed ex labitur adolescens scriptorem. Te saepe verear tibique sed. Et wisi ridens vix, lorem iudico blandit mel cu. Ex vel sint zril oportere, amet wisi aperiri te cum.</p>--%>
 	                    <div class="prod_options">
@@ -61,15 +62,16 @@
 	                            </div>
 	                        </div>--%>
 	                        <div class="row">
-	                            <label class="col-xl-5 col-lg-5 col-md-6 col-6"><strong>Size</strong> - Size Guide <a href="#0" data-bs-toggle="modal" data-bs-target="#size-modal"><i class="ti-help-alt"></i></a></label>
+	                            <label class="col-xl-5 col-lg-5 col-md-6 col-6"><strong>Size</strong> - Size Guide</label>
 	                            <div class="col-xl-4 col-lg-5 col-md-6 col-6">
 	                                <div class="custom-select-form">
-	                                    <select class="wide">
+										<asp:DropDownList ID="ddlSize" runat="server" class="wide"></asp:DropDownList>
+	                                    <%--<select class="wide">
 	                                        <option value="" selected>Small (S)</option>
 	                                        <option value="">M</option>
 	                                        <option value=" ">L</option>
 	                                        <option value=" ">XL</option>
-	                                    </select>
+	                                    </select>--%>
 	                                </div>
 	                            </div>
 	                        </div>
@@ -77,17 +79,21 @@
 	                            <label class="col-xl-5 col-lg-5  col-md-6 col-6"><strong>Quantity</strong></label>
 	                            <div class="col-xl-4 col-lg-5 col-md-6 col-6">
 	                                <div class="numbers-row">
-	                                    <input type="text" value="1" id="quantity_1" class="qty2" name="quantity_1">
+										<asp:TextBox runat="server" class="qty2" Text="1" id="quantity_1"  name="quantity_1" ></asp:TextBox>
 	                                </div>
 	                            </div>
 	                        </div>
 	                    </div>
 	                    <div class="row">
 	                        <div class="col-lg-5 col-md-6">
-	                            <div class="price_main"><span class="new_price">$148.00</span><span class="percentage">-20%</span> <span class="old_price">$160.00</span></div>
+	                            <div class="price_main"><span class="new_price">
+									<asp:Label ID="lblNewPrice" runat="server" Text="New price"></asp:Label></span><span class="percentage"><asp:Label ID="lblPercentage" runat="server" Text="Percentage" ></asp:Label></span> <span class="old_price">
+										<asp:Label ID="lblOldPrice" runat="server" Text="Old price" ></asp:Label></span></div>
 	                        </div>
 	                        <div class="col-lg-4 col-md-6">
-	                            <div class="btn_add_to_cart"><a href="#0" class="btn_1">Add to Cart</a></div>
+	                            <div class="btn_add_to_cart">
+									<asp:Button ID="btnAddToCart" runat="server" Text="Add to Cart" class="btn_1" OnClick="btnAddToCart_Click" />
+	                            </div>
 	                        </div>
 	                    </div>
 	                </div>
@@ -95,7 +101,7 @@
 	                <div class="product_actions">
 	                    <ul>
 	                        <li>
-	                            <a href="#"><i class="ti-heart"></i><span>Add to Wishlist</span></a>
+								<asp:HyperLink ID="hlWishlist" runat="server"><i class="ti-heart"></i><span>Add to Wishlist</span></asp:HyperLink>
 	                        </li>
 	                       <%-- <li>
 	                            <a href="#"><i class="ti-control-shuffle"></i><span>Add to Compare</span></a>
@@ -138,9 +144,9 @@
 	                            <div class="row justify-content-between">
 	                                <div class="col-lg-6">
 	                                    <h3>Details</h3>
-	                                    <p>Lorem ipsum dolor sit amet, in eleifend <strong>inimicus elaboraret</strong> his, harum efficiendi mel ne. Sale percipit vituperata ex mel, sea ne essent aeterno sanctus, nam ea laoreet civibus electram. Ea vis eius explicari. Quot iuvaret ad has.</p>
-	                                    <p>Vis ei ipsum conclusionemque. Te enim suscipit recusabo mea, ne vis mazim aliquando, everti insolens at sit. Cu vel modo unum quaestio, in vide dicta has. Ut his laudem explicari adversarium, nisl <strong>laboramus hendrerit</strong> te his, alia lobortis vis ea.</p>
-	                                    <p>Perfecto eleifend sea no, cu audire voluptatibus eam. An alii praesent sit, nobis numquam principes ea eos, cu autem constituto suscipiantur eam. Ex graeci elaboraret pro. Mei te omnis tantas, nobis viderer vivendo ex has.</p>
+	                                    <p>
+											<asp:Label ID="lblDescription" runat="server" Text="Description"></asp:Label>
+	                                    </p>
 	                                </div>
 	                                <div class="col-lg-5">
 	                                    <h3>Specifications</h3>
@@ -148,20 +154,16 @@
 	                                        <table class="table table-sm table-striped">
 	                                            <tbody>
 	                                                <tr>
-	                                                    <td><strong>Color</strong></td>
-	                                                    <td>Blue, Purple</td>
+	                                                    <td><strong>Brand</strong></td>
+	                                                    <td><asp:Label ID="lblBrand" runat="server" Text="Label"></asp:Label></td>
+	                                                </tr>
+	                                                <tr>
+	                                                    <td><strong>Category</strong></td>
+	                                                    <td><asp:Label ID="lblCategory" runat="server" Text="Label"></asp:Label></td>
 	                                                </tr>
 	                                                <tr>
 	                                                    <td><strong>Size</strong></td>
-	                                                    <td>150x100x100</td>
-	                                                </tr>
-	                                                <tr>
-	                                                    <td><strong>Weight</strong></td>
-	                                                    <td>0.6kg</td>
-	                                                </tr>
-	                                                <tr>
-	                                                    <td><strong>Manifacturer</strong></td>
-	                                                    <td>Manifacturer</td>
+	                                                    <td><asp:Label ID="lblSize" runat="server" Text="Label"></asp:Label></td>
 	                                                </tr>
 	                                            </tbody>
 	                                        </table>

@@ -71,7 +71,7 @@
     <Content Include="Admin\AddUser.aspx" />
     <Content Include="Admin\Brands.aspx" />
     <Content Include="Admin\Categories.aspx" />
-    <Content Include="Admin\index.aspx" />
+    <Content Include="Admin\Default.aspx" />
     <Content Include="Admin\Products.aspx" />
     <Content Include="Admin\Responses.aspx" />
     <Content Include="Admin\UpdateProduct.aspx" />
@@ -81,6 +81,7 @@
     <Content Include="App_Data\shoes_store_db_log.ldf">
       <DependentUpon>shoes_store_db.mdf</DependentUpon>
     </Content>
+    <Content Include="Cart.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="css\about.css" />
     <Content Include="css\account.css" />
@@ -248,7 +249,7 @@
     <Content Include="img\user.svg" />
     <Content Include="img\video_fix.png" />
     <Content Include="img\youtube_icon.svg" />
-    <Content Include="index.aspx" />
+    <Content Include="Default.aspx" />
     <Content Include="js\bootstrap.bundle.js" />
     <Content Include="js\bootstrap.bundle.min.js" />
     <Content Include="js\carousel-home-2.js" />
@@ -562,12 +563,12 @@
     <Compile Include="Admin\Categories.aspx.designer.cs">
       <DependentUpon>Categories.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\index.aspx.cs">
-      <DependentUpon>index.aspx</DependentUpon>
+    <Compile Include="Admin\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\index.aspx.designer.cs">
-      <DependentUpon>index.aspx</DependentUpon>
+    <Compile Include="Admin\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Products.aspx.cs">
       <DependentUpon>Products.aspx</DependentUpon>
@@ -611,6 +612,13 @@
     <Compile Include="Admin\Users.aspx.designer.cs">
       <DependentUpon>Users.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -618,6 +626,7 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\AddressOperations.cs" />
     <Compile Include="Helpers\BrandOperations.cs" />
     <Compile Include="Helpers\CartOperations.cs" />
     <Compile Include="Helpers\CategoryOperations.cs" />
@@ -625,6 +634,7 @@
     <Compile Include="Helpers\ProductOperations.cs" />
     <Compile Include="Helpers\RegisterLoginOperations.cs" />
     <Compile Include="Helpers\ResponseOperations.cs" />
+    <Compile Include="Helpers\ReviewOperations.cs" />
     <Compile Include="Helpers\UserOperations.cs" />
     <Compile Include="Helpers\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
@@ -634,12 +644,12 @@
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Helpers\WishlistOperations.cs" />
-    <Compile Include="index.aspx.cs">
-      <DependentUpon>index.aspx</DependentUpon>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="index.aspx.designer.cs">
-      <DependentUpon>index.aspx</DependentUpon>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="MyProfile.aspx.cs">
       <DependentUpon>MyProfile.aspx</DependentUpon>

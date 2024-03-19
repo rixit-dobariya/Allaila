@@ -81,10 +81,10 @@
 							</div>
 							<ul>
 								<li>
-									<a href="index.aspx" >Home</a>
+									<a href="Default.aspx" >Home</a>
 								</li>
 								<li>
-									<a href="javascript:void(0);">Shop</a
+									<a href="Shop.aspx">Shop</a>
 								</li>
 								<li>
 									<a href="javascript:void(0);">Collection</a>
