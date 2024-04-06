@@ -32,7 +32,7 @@ namespace Allaila.Helpers
         public DataSet getCartDataSet(int userId)
         {
             DataSet ds = new DataSet();
-            string query = $"select s.Image, s.Name, c.Size, c.Quantity, s.Price-(s.Price*s.Discount/100) as Price from Shoes_Details_tbl as s inner join Cart_Details_tbl as c on s.Shoe_Id = c.Product_Id where c.User_Id={userId}";
+            string query = $"select s.Image, s.Name, c.Size, c.Quantity, s.Price-(s.Price*s.Discount/100) as Price, s.Shoe_Id from Shoes_Details_tbl as s inner join Cart_Details_tbl as c on s.Shoe_Id = c.Product_Id where c.User_Id={userId}";
             SqlDataAdapter da = new SqlDataAdapter(query, con);
             da.Fill(ds);
             return ds;
@@ -46,6 +46,29 @@ namespace Allaila.Helpers
                 return true;
             else
                 return false;
+        }
+
+        public DataSet getDataSet(string userId)
+        {
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter("select s.Shoe_Id, s.Name, s.Price-(s.Price*s.Discount/100) as Price from Shoes_Details_tbl as s right join Cart_Details_tbl as c on c.Product_Id = s.Shoe_Id where c.User_Id ="+userId, con);
+            da.Fill(ds);
+            return ds;
+        }
+
+        public void updateRecord(int userId, int shoeId, int quantity)
+        {
+            string query = $"update Cart_Details_tbl set Quantity={quantity} where User_Id={userId} and Product_Id={shoeId}";
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.ExecuteNonQuery();
+
+        }
+        public void deleteRecord(int userId, int shoeId)
+        {
+            string query = $"delete from Cart_Details_tbl where User_Id={userId} and Product_Id={shoeId}";
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.ExecuteNonQuery();
+
         }
     }
 }

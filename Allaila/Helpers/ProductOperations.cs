@@ -37,6 +37,13 @@ namespace Allaila.Helpers
             return ds;
         }
 
+        public DataSet getProductDataSet(string brandId)
+        {
+            SqlDataAdapter da = new SqlDataAdapter("select Brand_Id, Shoe_Id, Name, Price, Discount, Image, Size_6_Stock, Size_7_Stock, Size_8_Stock, Size_9_Stock, Size_10_Stock from Shoes_Details_tbl where Is_Deleted=0 and Brand_Id="+brandId, con);
+            da.Fill(ds);
+            return ds;
+        }
+
         public DataSet getProductData()
         {
             SqlDataAdapter da = new SqlDataAdapter("select Shoe_Id, Name, Price, Discount, Image, Price-(Price*Discount/100) as New_Price from Shoes_Details_tbl where Is_Deleted=0", con);

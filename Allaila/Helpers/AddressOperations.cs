@@ -15,11 +15,12 @@ namespace Allaila.Helpers
             con = ConnectionHelper.getCon();
         }
 
-        public void addAddress(string userId, string name, string address, string city, string state, string pincode, string phone)
+        public string addAddress(string userId, string name, string address, string city, string state, string pincode, string phone)
         {
-            string query = $"insert into Address_Details_tbl(User_Id, Name, Address, City, State, Pincode, Phone) values('{userId}','{name}','{address}','{city}','{state}','{pincode}','{phone}')";
+            string query = $"insert into Address_Details_tbl(User_Id, Name, Address, City, State, Pincode, Phone) values('{userId}','{name}','{address}','{city}','{state}','{pincode}','{phone}');SELECT SCOPE_IDENTITY()";
             SqlCommand cmd = new SqlCommand(query, con);
-            cmd.ExecuteNonQuery();
+            return cmd.ExecuteScalar().ToString();
+
         }
 
     }

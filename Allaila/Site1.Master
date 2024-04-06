@@ -44,6 +44,7 @@
 	<link href="css/account.css" rel="stylesheet">
 	<link href="css/listing.css" rel="stylesheet">
 	<link href="css/product_page.css" rel="stylesheet">
+	<link href="css/checkout.css" rel="stylesheet">
 
     <!-- YOUR CUSTOM CSS -->
     <link href="css/custom.css" rel="stylesheet">
@@ -87,13 +88,13 @@
 									<a href="Shop.aspx">Shop</a>
 								</li>
 								<li>
-									<a href="javascript:void(0);">Collection</a>
+									<a href="Brands.aspx">Brands</a>
 								</li>
 								<li>
 									<a href="Contact.aspx">Contact us</a>
 								</li>
 								<li>
-									<a href="#0">About us</a>
+									<a href="AboutUs.aspx">About us</a>
 								</li>
 							</ul>
 						</div>
@@ -192,7 +193,7 @@
 						<ul class="top_tools">
 							<li>
 								<div class="dropdown dropdown-cart">
-									<a href="cart.html" class="cart_bt"><strong>2</strong></a>
+									<a href="Cart.aspx" class="cart_bt"><strong>2</strong></a>
 									<div class="dropdown-menu">
 										<ul>
 											<li>
@@ -218,9 +219,9 @@
 								</div>
 								<!-- /dropdown-cart-->
 							</li>
-							<li>
+							<%--<li>
 								<a href="#0" class="wishlist"><span>Wishlist</span></a>
-							</li>
+							</li>--%>
 							<li>
 								<div class="dropdown dropdown-access">
 									<a href="account.html" class="access_link"><span>Account</span></a>
@@ -385,6 +386,16 @@
 	
 	<!-- SPECIFIC SCRIPTS -->
 	<script src="js/carousel-home.min.js"></script>
+
+	<script>
+    	// Other address Panel
+		$('#other_addr input').on("change", function (){
+	        if(this.checked)
+	            $('#other_addr_c').fadeIn('fast');
+	        else
+	            $('#other_addr_c').fadeOut('fast');
+	    });
+	</script>
 
 </body>
 </html>

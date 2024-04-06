@@ -10,28 +10,19 @@
 	            <div class="col-md-6">
 	                <div class="all">
 	                    <div class="slider">
+							<asp:Image ID="Image1" runat="server" Width="500px"  Height="500px"  style="margin-left:90px;" />
 	                        <div class="owl-carousel owl-theme main">
-	                            <div style="background-image: url(img/products/shoes/1.jpg);" class="item-box"></div>
-	                            <%--<div style="background-image: url(img/products/shoes/2.jpg);" class="item-box"></div>
-	                            <div style="background-image: url(img/products/shoes/3.jpg);" class="item-box"></div>
-	                            <div style="background-image: url(img/products/shoes/4.jpg);" class="item-box"></div>
-	                            <div style="background-image: url(img/products/shoes/5.jpg);" class="item-box"></div>
-	                            <div style="background-image: url(img/products/shoes/6.jpg);" class="item-box"></div>--%>
+	                            <div  class="item-box" >
+									
+	                            </div>
 	                        </div>
-	                        <div class="left nonl"><i class="ti-angle-left"></i></div>
-	                        <div class="right"><i class="ti-angle-right"></i></div>
 	                    </div>
 	                    <div class="slider-two">
 	                        <div class="owl-carousel owl-theme thumbs">
-	                            <div style="background-image: url(img/products/shoes/1.jpg);" class="item active"></div>
-	                          <%--  <div style="background-image: url(img/products/shoes/2.jpg);" class="item"></div>
-	                            <div style="background-image: url(img/products/shoes/3.jpg);" class="item"></div>
-	                            <div style="background-image: url(img/products/shoes/4.jpg);" class="item"></div>
-	                            <div style="background-image: url(img/products/shoes/5.jpg);" class="item"></div>
-	                            <div style="background-image: url(img/products/shoes/6.jpg);" class="item"></div>--%>
+	                            <div  class="item active" runat="server" >
+									<asp:Image ID="Image2" runat="server" Width="500px"  Height="500px"/>
+	                            </div>
 	                        </div>
-	                        <div class="left-t nonl-t"></div>
-	                        <div class="right-t"></div>
 	                    </div>
 	                </div>
 	            </div>
@@ -39,8 +30,8 @@
 	                <div class="breadcrumbs">
 	                    <ul>
 	                        <li><a href="#">Home</a></li>
-	                        <li><a href="#">Category</a></li>
-	                        <li>Page active</li>
+	                        <li><a href="#">Products</a></li>
+	                        <li><asp:Label ID="lblName2" runat="server" Text="Label"></asp:Label></li>
 	                    </ul>
 	                </div>
 	                <!-- /page_header -->
@@ -50,28 +41,13 @@
 	                    <span class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i><em>4 reviews</em></span>
 	                    <%--<p><small>SKU: MTKRY-001</small><br>Sed ex labitur adolescens scriptorem. Te saepe verear tibique sed. Et wisi ridens vix, lorem iudico blandit mel cu. Ex vel sint zril oportere, amet wisi aperiri te cum.</p>--%>
 	                    <div class="prod_options">
-	                        <%--<div class="row">
-	                            <label class="col-xl-5 col-lg-5  col-md-6 col-6 pt-0"><strong>Color</strong></label>
-	                            <div class="col-xl-4 col-lg-5 col-md-6 col-6 colors">
-	                                <ul>
-	                                    <li><a href="#0" class="color color_1 active"></a></li>
-	                                    <li><a href="#0" class="color color_2"></a></li>
-	                                    <li><a href="#0" class="color color_3"></a></li>
-	                                    <li><a href="#0" class="color color_4"></a></li>
-	                                </ul>
-	                            </div>
-	                        </div>--%>
+	                       
 	                        <div class="row">
 	                            <label class="col-xl-5 col-lg-5 col-md-6 col-6"><strong>Size</strong> - Size Guide</label>
 	                            <div class="col-xl-4 col-lg-5 col-md-6 col-6">
 	                                <div class="custom-select-form">
 										<asp:DropDownList ID="ddlSize" runat="server" class="wide"></asp:DropDownList>
-	                                    <%--<select class="wide">
-	                                        <option value="" selected>Small (S)</option>
-	                                        <option value="">M</option>
-	                                        <option value=" ">L</option>
-	                                        <option value=" ">XL</option>
-	                                    </select>--%>
+	                                   
 	                                </div>
 	                            </div>
 	                        </div>
@@ -98,16 +74,13 @@
 	                    </div>
 	                </div>
 	                <!-- /prod_info -->
-	                <div class="product_actions">
+	                <%--<div class="product_actions">
 	                    <ul>
 	                        <li>
 								<asp:HyperLink ID="hlWishlist" runat="server"><i class="ti-heart"></i><span>Add to Wishlist</span></asp:HyperLink>
 	                        </li>
-	                       <%-- <li>
-	                            <a href="#"><i class="ti-control-shuffle"></i><span>Add to Compare</span></a>
-	                        </li>--%>
 	                    </ul>
-	                </div>
+	                </div>--%>
 	                <!-- /product_actions -->
 	            </div>
 	        </div>

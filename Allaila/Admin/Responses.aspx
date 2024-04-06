@@ -8,8 +8,7 @@
 			<div class="breadcrumbs">
 				<ul>
 					<li><a href="#">Home</a></li>
-					<li><a href="#">Category</a></li>
-					<li>Page active</li>
+					<li>Responses</li>
 				</ul>
 			</div>
 			<h1>Responses page</h1>

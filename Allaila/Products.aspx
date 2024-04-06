@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Shop.aspx.cs" Inherits="Allaila.Shop" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Products.aspx.cs" Inherits="Allaila.Products" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
@@ -208,7 +208,7 @@
 								<figure>
 									<span class="ribbon off"><asp:Label ID="Label4" runat="server" Text='<%# "-" + Eval("Discount")+"%" %>' ></asp:Label></span>
 									<asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl='<%# "ProductDetails.aspx?Shoe_Id=" + Eval("Shoe_Id") %>' >
-										<asp:Image ID="Image1" runat="server" class="img-fluid lazy" ImageUrl='<%# Eval("Image").ToString().Substring(2) %>' alt="" Height="400px" Width="400px" />
+										<asp:Image ID="Image1" runat="server" class="img-fluid lazy" ImageUrl='<%# Eval("Image") %>' data-src="img/products/shoes/1.jpg" alt="" />
 									</asp:HyperLink>
 									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 									<%--<div data-countdown="2019/05/15" class="countdown"></div>--%>
@@ -220,10 +220,10 @@
 								</asp:HyperLink>
 								<div class="price_box">
 									<span class="new_price">
-										<asp:Label ID="Label1" runat="server" Text='<%# "₹" + float.Parse(Eval("New_Price").ToString()) %>'></asp:Label>
+										<asp:Label ID="Label1" runat="server" Text='<%# "₹" + Eval("New_Price") %>'></asp:Label>
 									</span>
 									<span class="old_price">
-										<asp:Label ID="Label2" runat="server" Text='<%# "₹" + float.Parse(Eval("Price").ToString()) %>'></asp:Label>
+										<asp:Label ID="Label2" runat="server" Text='<%# "₹" + Eval("Price") %>'></asp:Label>
 									</span>
 								</div>
 								<ul>

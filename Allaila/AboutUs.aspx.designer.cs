@@ -8,9 +8,9 @@
 //------------------------------------------------------------------------------
 
 
-namespace Allaila.Admin
+namespace Allaila
 {
-    public partial class index
+    public partial class AboutUs
     {
     }
 }

@@ -6,8 +6,7 @@ namespace Allaila.Helpers
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-
+            //new OrderOpeations().addOrderDetails("2", "1", "1", "1");
         }
     }
 }

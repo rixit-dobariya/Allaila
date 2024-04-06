@@ -3,13 +3,13 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <main class="bg_gray">
-		<div class="container margin_30">
+	  <div class="container margin_30">
 		<div class="page_header">
 			<div class="breadcrumbs">
 				<ul>
 					<li><a href="#">Home</a></li>
 					<li><a href="#">Products</a></li>
-					<li>Page active</li>
+<%--					<li>Page active</li>--%>
 				</ul>
                 <div class="btn_add_to_cart float-end"><a href="AddProduct.aspx" class="btn_1">Add Product</a></div>
 			</div>
@@ -91,7 +91,7 @@
 		
 		
 		<!-- /box_cart -->
-		
+	    </div>	
 	</main>
-    </div>
+    
 </asp:Content>

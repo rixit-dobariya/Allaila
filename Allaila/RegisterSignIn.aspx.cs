@@ -67,7 +67,7 @@ namespace Allaila
                 }
                 else
                 {
-                    Response.Redirect("Admin/Default.aspx");
+                    Response.Redirect("Admin/Products.aspx");
                 }
             }
         }

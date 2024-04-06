@@ -28,9 +28,12 @@ namespace Allaila
             string shoeId = Request.QueryString["Shoe_Id"];
             obj.fetchProduct(Convert.ToInt32(shoeId));
             lblBrand.Text = obj.brandName;
+            Image1.ImageUrl = obj.productImage.Substring(2);
+            Image2.ImageUrl = obj.productImage.Substring(2);
             lblCategory.Text = obj.categoryName;
             lblDescription.Text = obj.description;
             lblName.Text = obj.productName;
+            lblName2.Text = obj.productName;
             lblNewPrice.Text = (obj.price - (obj.price * obj.discount / 100)).ToString();
             lblOldPrice.Text = obj.price.ToString();
             lblPercentage.Text = obj.discount.ToString();
@@ -66,15 +69,15 @@ namespace Allaila
             string sizeString="";
             int[] size = new int[5];
             if (obj.stock1 != 0)
-                sizeString += obj.stock1.ToString() + ", ";
+                sizeString += "6, ";
             if (obj.stock2 != 0)
-                sizeString += obj.stock2.ToString() + ", ";
+                sizeString += "7, ";
             if (obj.stock3 != 0)
-                sizeString += obj.stock3.ToString() + ", ";
+                sizeString +="8, ";
             if (obj.stock4 != 0)
-                sizeString += obj.stock4.ToString() + ", ";
+                sizeString += "9, ";
             if (obj.stock5 != 0)
-                sizeString += obj.stock5.ToString() + ", ";
+                sizeString += "10, ";
             if (sizeString.Length != 0)
                 return sizeString.Substring(0, sizeString.Length - 1);
             else
