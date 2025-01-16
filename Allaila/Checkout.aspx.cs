@@ -48,7 +48,7 @@ namespace Allaila
             lblTotal.Text = total.ToString();
 
             userId = Session["userId"].ToString();
-            DataList1.DataSource = cartObj.getDataSet(userId);
+            DataList1.DataSource = cartObj.getCartDataSet(Convert.ToInt32(userId));
             DataList1.DataBind();
         }
 
@@ -66,10 +66,10 @@ namespace Allaila
             ds = cartObj.getCartDataSet(Convert.ToInt32(userId));
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
-                string productId = ds.Tables[0].Rows[0][5].ToString();
-                string size = ds.Tables[0].Rows[0][2].ToString();
-                string quantity = ds.Tables[0].Rows[0][3].ToString();
-                string price = ds.Tables[0].Rows[0][4].ToString();
+                string productId = ds.Tables[0].Rows[i][5].ToString();
+                string size = ds.Tables[0].Rows[i][2].ToString();
+                string quantity = ds.Tables[0].Rows[i][3].ToString();
+                string price = ds.Tables[0].Rows[i][4].ToString();
                 ordersObj.addOrderDetails(orderId, productId, size, quantity, price);
             }
             Response.Redirect("Confirm.aspx");
