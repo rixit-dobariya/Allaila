@@ -31,7 +31,7 @@
                 </asp:TemplateField>
 				<asp:TemplateField HeaderText="Price">
                     <ItemTemplate>
-						<strong>₹<asp:Label ID="lblPrice" runat="server" Text='<%# Eval("Price") %>' ></asp:Label></strong>
+						<strong>$<asp:Label ID="lblPrice" runat="server" Text='<%# Eval("Price") %>' ></asp:Label></strong>
                     </ItemTemplate>
                 </asp:TemplateField>
 				<asp:TemplateField HeaderText="Size">
@@ -49,7 +49,7 @@
 				</asp:TemplateField>
 				<asp:TemplateField HeaderText="Subtotal">
                     <ItemTemplate>
-						<strong>₹<asp:Label ID="lblSubtotal" runat="server" Text='<%# Convert.ToDouble(Eval("Price"))*Convert.ToInt32(Eval("Quantity")) %>' ></asp:Label></strong>
+						<strong>$<asp:Label ID="lblSubtotal" runat="server" Text='<%# Convert.ToDouble(Eval("Price"))*Convert.ToInt32(Eval("Quantity")) %>' ></asp:Label></strong>
                     </ItemTemplate>
                 </asp:TemplateField>
 				<asp:TemplateField HeaderText="Operations">
@@ -78,13 +78,13 @@
 				<div class="col-xl-4 col-lg-4 col-md-6">
 			<ul>
 				<li>
-					<span>Subtotal</span> ₹<asp:Label ID="lblSubtotal" runat="server" Text="Subtotal"></asp:Label>
+					<span>Subtotal</span> $<asp:Label ID="lblSubtotal" runat="server" Text="Subtotal"></asp:Label>
 				</li>
 				<li>
-					<span>Shipping</span> ₹<asp:Label ID="lblShipping" runat="server" Text="Shipping"></asp:Label>
+					<span>Shipping</span> $<asp:Label ID="lblShipping" runat="server" Text="Shipping"></asp:Label>
 				</li>
 				<li>
-					<span>Total</span> ₹<asp:Label ID="lblTotal" runat="server" Text="Total"></asp:Label>
+					<span>Total</span> $<asp:Label ID="lblTotal" runat="server" Text="Total"></asp:Label>
 				</li>
 			</ul>
 			<asp:Button ID="Button2" runat="server" Text="Proceed to Checkout" class="btn_1 full-width cart" OnClick="Button2_Click" />

@@ -82,7 +82,10 @@
 							</div>
 							<ul>
 								<li>
-									<a href="Default.aspx">Shop</a>
+									<a href="Default.aspx" >Home</a>
+								</li>
+								<li>
+									<a href="Shop.aspx">Shop</a>
 								</li>
 								<li>
 									<a href="Brands.aspx">Brands</a>

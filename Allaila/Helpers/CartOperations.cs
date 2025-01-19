@@ -48,6 +48,13 @@ namespace Allaila.Helpers
                 return false;
         }
 
+        public DataSet getDataSet(string userId)
+        {
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter("select s.Shoe_Id, s.Name, s.Price-(s.Price*s.Discount/100) as Price from Shoes_Details_tbl as s right join Cart_Details_tbl as c on c.Product_Id = s.Shoe_Id where c.User_Id ="+userId, con);
+            da.Fill(ds);
+            return ds;
+        }
 
         public void updateRecord(int userId, int shoeId, int quantity)
         {
